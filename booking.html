@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Appointment | Sorbet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="email.css" />
+</head>
+<body class="booking-body">
+  <nav class="nav-bar booking-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="salon.html">Salon</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="man.html">Man</a></li>
+    </ul>
+  </nav>
+
+  <header class="booking-hero">
+    <div class="booking-hero__content">
+      <p class="eyebrow">Book online</p>
+      <h1>Plan your next Sorbet visit</h1>
+      <p class="lede">Pick a service, choose your time, and secure it with a quick R200 deposit.</p>
+      <div class="booking-hero__chips">
+        <span class="booking-chip"><i class="fa-regular fa-clock"></i> Same-day slots</span>
+        <span class="booking-chip"><i class="fa-regular fa-pen-to-square"></i> Free changes up to 4 hours</span>
+        <span class="booking-chip"><i class="fa-solid fa-shield-heart"></i> Secure payments</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="booking-page">
+    <section class="booking-grid">
+      <div class="booking-summary">
+        <h2>Popular services</h2>
+        <p>Let us know what you need. We'll match you with the right therapist and keep you updated by email or SMS.</p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Hair &amp; Colour</h3>
+            <ul>
+              <li>Signature Haircut - R650</li>
+              <li>Balayage Colour - R2250</li>
+              <li>Keratin Treatment - R1800</li>
+              <li>Blowout &amp; Style - R450</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Nailbar</h3>
+            <ul>
+              <li>Classic Manicure - R350</li>
+              <li>Gel Manicure - R550</li>
+              <li>Spa Pedicure - R650</li>
+              <li>Nail Art Design - R250</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <h3>Sorbet MAN</h3>
+            <ul>
+              <li>Gentleman Cut - R550</li>
+              <li>Beard Trim &amp; Shape - R350</li>
+              <li>Hot Shave Experience - R450</li>
+              <li>Executive Package - R1200</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <i class="fa-regular fa-circle-check"></i>
+          <span>Need a group booking or something special? Call <a href="tel:+27115670433">011 567 0433</a> or <a href="contact.html">chat with us</a>.</span>
+        </div>
+      </div>
+
+      <form class="booking-form" id="bookingForm" action="checkout.html" method="get" novalidate>
+        <div class="form-row">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="name" placeholder="Alex Dlamini" autocomplete="name" required>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="phone">Mobile number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" inputmode="tel" autocomplete="tel" required>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <optgroup label="Hair &amp; Colour">
+                <option value="signature-haircut">Signature Haircut - R650</option>
+                <option value="balayage-colour">Balayage Colour - R2250</option>
+                <option value="keratin-treatment">Keratin Treatment - R1800</option>
+                <option value="blowout-style">Blowout &amp; Style - R450</option>
+              </optgroup>
+              <optgroup label="Nailbar">
+                <option value="classic-manicure">Classic Manicure - R350</option>
+                <option value="gel-manicure">Gel Manicure - R550</option>
+                <option value="spa-pedicure">Spa Pedicure - R650</option>
+                <option value="nail-art">Nail Art Design - R250</option>
+              </optgroup>
+              <optgroup label="Sorbet MAN">
+                <option value="gentleman-cut">Gentleman Cut - R550</option>
+                <option value="beard-trim">Beard Trim &amp; Shape - R350</option>
+                <option value="hot-shave">Hot Shave Experience - R450</option>
+                <option value="executive-package">Executive Package - R1200</option>
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <label for="location">Preferred store</label>
+            <input type="text" id="location" name="location" placeholder="e.g. V&amp;A Waterfront" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="preferredDate">Preferred date</label>
+            <input type="date" id="preferredDate" name="date" required>
+          </div>
+          <div>
+            <label for="preferredTime">Preferred time</label>
+            <input type="time" id="preferredTime" name="time" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Stylist preference, allergies, or anything we should know."></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="deposit">Deposit payment (min R200)</label>
+          <div class="currency-field">
+            <span>R</span>
+            <input type="number" id="deposit" name="deposit" min="200" step="50" value="200" required>
+          </div>
+          <p class="field-hint">We only charge the deposit now. Pay the balance in-salon on the day.</p>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="policy" required>
+          I agree to Sorbet's <a href="policy.html">booking &amp; privacy policy</a>.
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">Pay deposit &amp; confirm</button>
+          <a class="ghost-btn" href="contact.html"><i class="fa-regular fa-comment-dots"></i>Need help?</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sorbet-footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Let's Connect</h4>
+        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
+        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+        <a class="footer-cta" href="booking.html">Book now</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="salon.html">Salon</a>
+        <a href="nailbar.html">Nailbar</a>
+        <a href="hairbar.html">Hairbar</a>
+        <a href="man.html">MAN</a>
+        <a href="products.html">Candis&amp;Co</a>
+        <a href="products.html">Gift Cards</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col">
+        <h4>Your Sorbet</h4>
+        <a href="booking.html">Book Online</a>
+        <a href="contact.html">Store Locator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">Sorbet story</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-logo">Sorbet</div>
+      <div>&copy; Copyright 2026 Sorbet Group. All Rights Reserved</div>
+      <div class="footer-links">
+        <a href="#">T&amp;Cs</a>
+        <a href="#">Refunds &amp; Returns</a>
+        <a href="#">PAIA</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const dateInput = document.getElementById("preferredDate");
+      if (dateInput) {
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.min = today;
+      }
+
+      const form = document.getElementById("bookingForm");
+      const depositInput = document.getElementById("deposit");
+
+      if (form) {
+        form.addEventListener("submit", (event) => {
+          if (depositInput && Number(depositInput.value) < 200) {
+            event.preventDefault();
+            depositInput.setCustomValidity("Minimum deposit is R200");
+            depositInput.reportValidity();
+            return;
+          }
+          depositInput?.setCustomValidity("");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

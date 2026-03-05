@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Men's Barbershop - Book & Pay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <style>
+    
+
+    .video-section { display:flex; justify-content:center; padding:40px 10%; background:#fff;}
+    .video-embed { width:100%; max-width:5000px; aspect-ratio:16/9; border:0;  border-radius:12px; }
+
+     * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Roboto', sans-serif; color:#333; }
+
+    
+    header { background:#111; color:#fff; padding:20px 0; position:sticky; top:0; z-index:1000; }
+    nav { display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto; }
+    nav .logo { font-size:1.8em; font-weight:bold; color:#519ea0; }
+    nav ul { display:flex; list-style:none; gap:20px; }
+    nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
+    nav ul li a:hover { color:#519ea0; }
+
+    
+    .hero { 
+     
+      height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; color:#fff;
+    }
+    .hero::after { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); }
+    .hero-content { position:relative; z-index:1; }
+    .hero h1 { font-size:3em; margin-bottom:20px; }
+    .hero p { font-size:1.2em; margin-bottom:30px; }
+    .hero a { background:#519ea0; color:#111; padding:10px 25px; text-decoration:none; font-weight:bold; border-radius:5px; transition:0.3s; }
+    .hero a:hover { background:#fff; color:#111; }
+
+    
+    section { padding:80px 10%; }
+    section h2 { text-align:center; font-size:2.5em; margin-bottom:50px; color:#111; }
+
+    
+    .about { display:flex; align-items:center; gap:40px; flex-wrap:wrap; }
+    .about img { width:500px; border-radius:10px; }
+    .about-text { max-width:600px; }
+    .about-text p { margin-bottom:20px; }
+
+    
+    .services { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+    .service-card { background:#f8f8f8; padding:20px; border-radius:10px; width:300px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
+    .service-card:hover { transform:translateY(-5px); }
+    .service-card i { font-size:2em; margin-bottom:15px; color:#519ea0; }
+    .service-card h3 { margin-bottom:10px; }
+
+    
+    .booking-form { max-width:600px; margin:auto; background:#f4f4f4; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+    .booking-form input, .booking-form select, .booking-form button { width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc; }
+    .booking-form button { background:#1ba6a6; color:#111; font-weight:bold; border:none; cursor:pointer; transition:0.3s; }
+    .booking-form button:hover { background:#519ea0; }
+
+    
+    footer { background:#444343; color:#fff; text-align:center; padding:20px 0; margin-top:50px; }
+    
+.site-footer {
+  background: var(--text-dark);
+  color: var(--bg-white);
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 14px;
+}
+ footer {
+      background: grey;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent-yellow);
+    }
+  .sorbet-footer {
+  background: #4a4a4a;
+  color: #f3f3f3;
+  padding: 60px 30px 30px;
+  margin-top: 60px;
+  text-align: left;
+}
+
+.sorbet-footer a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+.sorbet-footer a:hover {
+  color: var(--sorbet-teal);
+}
+
+.sorbet-footer .footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.sorbet-footer h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.sorbet-footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.sorbet-footer .footer-email {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sorbet-footer .footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sorbet-teal);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.sorbet-footer .footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.sorbet-footer .footer-divider {
+  max-width: 1200px;
+  margin: 30px auto;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sorbet-footer .footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  font-size: 14px;
+  color: #dcdcdc;
+}
+
+.sorbet-footer .footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fefefe;
+}
+
+.sorbet-footer .footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+   .sorbet-footer .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+.sorbet-footer .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <nav>
+      <div class="logo">Elite Barbers</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book & Pay</a></li>
+      </ul>
+    </nav>
+  </header>
+  <header>
+   
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" >About</a></li>
+      <li><a href="salon.html">Salon</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="man.html">Man</a></li>
+    </ul>
+  </nav>
+</header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Elite Men's Barbershop</h1>
+      <p>Book your appointment and get premium grooming services today!</p>
+      <a href="#booking">Book Now</a>
+    </div>
+  </section>
+
+  <div class="video-section" aria-label="Barbershop preview video">
+    <iframe
+      class="video-embed"
+      src="https://www.youtube.com/embed/xFe8a3fZ8Bw?autoplay=1&mute=1&loop=1&playlist=xFe8a3fZ8Bw&playsinline=1"
+      title="Elite Barbershop Preview"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <img src="images/barbershop.jpg" alt="Barbershop">
+      <div class="about-text">
+        <p>Elite Barbers provides top-notch grooming services for men. Our experienced barbers ensure you leave looking sharp and confident.</p>
+        <p>We offer modern haircuts, beard trims, and luxury grooming experiences in a comfortable and stylish environment.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="images/haircut.jpg" alt="Haircut Icon">
+        <h3>Haircut</h3>
+        <p>Precision cuts for every style. R300</p>
+      </div>
+      <div class="service-card">
+        <img src="images/beard-trim.jpg" alt="Beard Trim Icon">
+        <h3>Beard Trim</h3>
+        <p>Keep your beard neat and stylish. R200</p>
+      </div>
+      <div class="service-card">
+        <img src="images/hot-towel-shave.jpg" alt="Hot Towel Shave Icon">
+        <h3>Hot Towel Shave</h3>
+        <p>Relaxing traditional shave. R450</p>
+      </div>
+      <div class="service-card">
+        <img src="images/combo.jpg" alt="Combo Grooming Icon">
+        <h3>Combo Grooming</h3>
+        <p>Haircut + Beard Trim + Shave. R700</p>
+      </div>
+    </div>
+  </section>
+
+   
+  <section id="booking">
+    <h2>Book & Pay</h2>
+    <form class="booking-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Service</option>
+        <option value="haircut">Haircut - R300</option>
+        <option value="beard">Beard Trim - R200</option>
+        <option value="shave">Hot Towel Shave - R450</option>
+        <option value="combo">Combo Grooming - R700</option>
+        <option value="gentleman">Gentleman Cut - R550</option>
+        <option value="beard-shape">Beard Trim & Shape - R350</option>
+        <option value="executive">Executive Package - R1200</option>
+      </select>
+      <input type="date" required>
+      <input type="time" required>
+       
+      <button type="submit">Pay & Book Appointment</button>
+    </form>
+    <p style="text-align:center; margin-top:10px;">*Connect a real payment gateway like Stripe or PayPal to process payments.</p>
+  </section>
+
+  <main>
+    <!-- all your page content here -->
+  </main>
+  <footer class="sorbet-footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Let's Connect</h4>
+        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
+        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+        <a class="footer-cta" href="booking.html">Book now</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+       <div class="footer-col">
+          <h4>Services</h4>
+          <a href="salon.html">Salon</a>
+          <a href="nailbar.html">Nailbar</a>
+          <a href="hairbar.html">Hairbar</a>
+          <a href="man.html">MAN</a>
+          <a href="products.html">Candis&Co</a>
+          <a href="products.html">Gift Cards</a>
+          <a href="products.html">Products</a>
+        </div>
+        <div class="footer-col">
+          <h4>Your Sorbet</h4>
+          <a href="booking.html">Book Online</a>
+          <a href="contact.html">Store Locator</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">Sorbet story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-logo">Sorbet</div>
+      <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
+      <div class="footer-links">
+        <a href="#">T&amp;Cs</a>
+        <a href="#">Refunds &amp; Returns</a>
+        <a href="#">PAIA</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </footer>  
+
+  <script src="main.js"></script>
+</body>
+</html>

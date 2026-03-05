@@ -1,0 +1,112 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f3f3f3;
+}
+
+
+
+
+.featured-product{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background: linear-gradient(
+90deg,
+rgba(90,20,90,0.9) 0%,
+rgba(160,60,130,0.7) 50%,
+rgba(255,120,120,0.5) 100%
+),
+
+url(images/product-advertisement.webp);
+
+background-size:cover;
+background-position:center;
+width: 3000px;
+padding:80px;
+border-radius:25px;
+margin:20px;
+
+color:white;
+
+}
+
+
+.featured-content{
+max-width:500px;
+}
+
+
+.badge{
+
+background:#00b5c8;
+padding:10px 20px;
+border-radius:20px;
+font-size:14px;
+
+}
+
+
+.featured-content h2{
+margin-top:40px;
+font-size:28px;
+}
+
+
+.featured-content h1{
+font-size:36px;
+margin:10px 0;
+}
+
+
+.featured-content p{
+line-height:1.6;
+font-size:16px;
+}
+
+
+.featured-image img{
+
+width:400px;
+
+}
+
+
+
+
+.top-sellers{
+
+padding:40px 20px;
+
+}
+
+
+.top-sellers h2{
+
+font-size:32px;
+
+}
+
+
+.top{
+color:#ff3b6b;
+}
+
+.sell{
+color:#00a8a8;
+}
+
+
+.top-sellers p{
+
+max-width:900px;
+line-height:1.7;
+color:#555;
+
+}
+
+.featured-product{
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
