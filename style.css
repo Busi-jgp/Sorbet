@@ -1934,8 +1934,10 @@ max-width:1200px;
 margin:auto;
 }
 
-/* --- Global mobile-friendly tweaks (site-wide) --- */
-@media (max-width: 768px){
+/* ------------ RESPONSIVE BREAKPOINTS ------------ */
+
+/* Desktop and down (<=1024px) */
+@media (max-width:1024px){
   body{
     padding:0 12px;
     overflow-x:hidden;
@@ -1945,7 +1947,28 @@ margin:auto;
   .nav-menu{
     flex-wrap:wrap;
     justify-content:center;
-    gap:12px;
+    gap:14px;
+  }
+  .section{
+    padding:42px 0;
+  }
+  .grid.three,
+  .grid.two{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  }
+  .services{
+    gap:16px;
+  }
+  .sorbet-footer .footer-top{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+/* Tablet and down (<=768px) */
+@media (max-width:768px){
+  .nav-bar ul{
+    flex-wrap:wrap;
+    gap:10px;
   }
   .nav-bar li{
     height:auto;
@@ -1971,18 +1994,26 @@ margin:auto;
     width:100%;
   }
   .container{
-    padding:0 4px;
+    padding:0 6px;
   }
-  .sorbet-footer .footer-top{
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap:20px;
+  .hero-mix .hero-shell{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:18px;
+  }
+  .hero-mix .hero-visual{
+    order:-1;
+  }
+  .hero-mix h2{
+    font-size:32px;
   }
   .sorbet-footer{
     padding:40px 16px 24px;
   }
 }
 
-@media (max-width: 480px){
+/* Mobile (<=480px) */
+@media (max-width:480px){
   .nav-bar a{
     padding:10px 12px;
     font-size:14px;
@@ -1991,7 +2022,26 @@ margin:auto;
   .grid.two{
     grid-template-columns:1fr;
   }
+  .card,
+  .feature-card,
+  .product-card{
+    padding:18px;
+  }
+  .about-title{
+    font-size:46px;
+  }
+  .cta-btn,
+  .primary-btn,
+  .secondary-btn{
+    width:100%;
+    text-align:center;
+  }
   .sorbet-footer .footer-top{
     grid-template-columns:1fr;
+  }
+  .sorbet-footer .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
   }
 }

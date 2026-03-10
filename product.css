@@ -125,3 +125,24 @@ header{
     display:block;
   }
 }
+
+@media (max-width: 1024px){
+  .nav-links{
+    flex-wrap:wrap;
+    gap:14px;
+    height:auto;
+  }
+  .nav-links ul{
+    justify-content:center;
+  }
+}
+
+@media (max-width: 480px){
+  .nav-links a{
+    padding:10px 12px;
+    font-size:14px;
+  }
+  .nav-links{
+    gap:10px;
+  }
+}
