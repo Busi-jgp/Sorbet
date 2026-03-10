@@ -145,9 +145,7 @@ html, body{
   background-color:  #655491 ;
   color: white;
 }
-nav li:first-child{
-  margin-right: auto;
-}
+
 li::marker {
   content: "";
 }
@@ -635,4 +633,8 @@ footer {
   .sorbet-footer .footer-top {
     grid-template-columns: 1fr;
   }
+}
+button{
+padding:15px 25px;
+font-size:16px;
 }

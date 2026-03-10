@@ -31,3 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function openMenu(menu){
+
+let sections=document.querySelectorAll(".menu-section")
+
+sections.forEach(section=>{
+section.classList.remove("active")
+})
+
+document.getElementById(menu).classList.add("active")
+
+let tabs=document.querySelectorAll(".tab")
+
+tabs.forEach(tab=>{
+tab.classList.remove("active")
+})
+
+event.target.classList.add("active")
+
+}

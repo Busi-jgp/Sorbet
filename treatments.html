@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorbet Treatment Menu</title>
+
+<link rel="stylesheet" href="treatment.css">
+
+<style>
+body{
+
+font-family: Arial, Helvetica, sans-serif;
+background:#cfe7e6;
+margin:0;
+padding:0;
+
+}
+
+.page{
+
+max-width:950px;
+margin:auto;
+
+}
+
+
+
+.menu-tabs{
+
+display:flex;
+gap:10px;
+margin-bottom:20px;
+
+}
+
+
+
+.tab{
+
+background:#18a7a0;
+border:none;
+padding:12px 22px;
+color:white;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+.tab.active{
+
+background:#d67a8a;
+
+}
+
+
+
+.menu-container{
+margin-top: 60px;
+width:100%;
+
+}
+
+
+
+.menu-section{
+
+display:none;
+
+}
+
+
+
+.menu-section.active{
+
+display:block;
+
+}
+
+
+
+.menu-card{
+
+padding:40px;
+border-radius:15px;
+
+}
+
+
+
+.menu-card.pink{
+
+background:#d67a8a;
+color:white;
+
+}
+
+
+
+.menu-card.white{
+
+background:white;
+color:#333;
+
+}
+
+
+
+.menu-header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+
+}
+
+
+
+.menu-header img{
+
+width:620px;
+border-radius:6px;
+justify-content: center;
+}
+
+
+
+.title{
+
+font-size:60px;
+font-weight:bold;
+color:#ffd0d7;
+
+}
+
+
+
+.pinktext{
+
+color:#e67d92;
+
+}
+
+
+
+h3{
+
+margin-top:30px;
+margin-bottom:10px;
+
+}
+
+
+
+.service{
+
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,0.6);
+
+}
+
+
+
+.service.dark{
+
+border-bottom:1px solid #ccc;
+
+}
+
+
+
+.service span:last-child{
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Sorbet</div>
+      <ul class="nav-links">
+        <li><a href="salon.html">Salon</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="man.html">Man</a></li>
+        <li><a href="treatments.html">Menu</a></li>
+        <li><a href="book.html">Book Online</a></li>
+      </ul>
+    </nav>
+    <div class="hero-text">
+      <h1>Treatment Menu</h1>
+      <p>Beauty treatments for every body</p>
+    </div>
+  </header>
+
+<div class="page">
+
+<div class="menu-tabs">
+
+<button class="tab active" onclick="openMenu('nails')">Nails</button>
+<button class="tab" onclick="openMenu('brows')">Brows and Lashes</button>
+<button class="tab" onclick="openMenu('waxing')">Waxing</button>
+<button class="tab" onclick="openMenu('skin')">Skin Treatments</button>
+<button class="tab" onclick="openMenu('men')">Men's Grooming</button>
+
+</div>
+
+
+
+<div class="menu-container">
+
+<div class="menu-section active" id="nails">
+
+<div class="menu-card pink">
+
+<div class="menu-header">
+
+<div class="title"></div>
+
+<img src="images/sorbet-nails-temp2b.webp">
+
+</div>
+
+
+
+<h3>Soft Gel Tips</h3>
+
+<div class="service">
+<span>Soft Gel Tips + Gelish</span>
+<span>R605</span>
+</div>
+
+<div class="service">
+<span>Soft Gel Tips + Gelish with Backfill</span>
+<span>R520</span>
+</div>
+
+
+
+<h3>Gel Polish</h3>
+
+<div class="service">
+<span>Gel Polish Hands Only</span>
+<span>R350</span>
+</div>
+
+<div class="service">
+<span>Gel Polish Feet Only</span>
+<span>R350</span>
+</div>
+
+<div class="service">
+<span>Gel Polish with Ombre Hands</span>
+<span>R360</span>
+</div>
+
+<div class="service">
+<span>Gel Polish Mini Hands</span>
+<span>R460</span>
+</div>
+
+<div class="service">
+<span>Gel Polish Mini Feet</span>
+<span>R480</span>
+</div>
+
+<div class="service">
+<span>Gel Polish Power Hands</span>
+<span>R540</span>
+</div>
+
+<div class="service">
+<span>Gel Polish Power Feet</span>
+<span>R560</span>
+</div>
+
+
+
+<h3>Manicures & Pedicures</h3>
+
+<div class="service">
+<span>Quick Hands</span>
+<span>R205</span>
+</div>
+
+<div class="service">
+<span>Quick Feet</span>
+<span>R220</span>
+</div>
+
+<div class="service">
+<span>Mini Hands</span>
+<span>R310</span>
+</div>
+
+<div class="service">
+<span>Mini Feet</span>
+<span>R325</span>
+</div>
+
+<div class="service">
+<span>Power Hands</span>
+<span>R385</span>
+</div>
+
+<div class="service">
+<span>Power Feet</span>
+<span>R405</span>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="menu-section" id="brows">
+
+<div class="menu-card pink">
+
+<div class="menu-header">
+
+
+
+<img src="images/sorbet-brow-temp1-768x240.webp">
+
+</div>
+
+
+
+<h3>Threading</h3>
+
+<div class="service">
+<span>Brows</span>
+<span>R130</span>
+</div>
+
+<div class="service">
+<span>Brows + Lip</span>
+<span>R220</span>
+</div>
+
+<div class="service">
+<span>Brows + Chin</span>
+<span>R220</span>
+</div>
+
+<div class="service">
+<span>Brows + Lip + Chin</span>
+<span>R305</span>
+</div>
+
+<div class="service ">
+<span>Full Face</span>
+<span>R310</span>
+</div>
+
+
+
+<h3>Brow Lamination</h3>
+
+<div class="service">
+<span>Brow Lamination</span>
+<span>R495</span>
+</div>
+
+<div class="service">
+<span>Brow Lamination + Wax + Tint</span>
+<span>R665</span>
+</div>
+
+
+
+<h3>Lash Lift</h3>
+
+<div class="service">
+<span>Lash Lift</span>
+<span>R495</span>
+</div>
+
+<div class="service">
+<span>Lash Lift + Tint</span>
+<span>R565</span>
+</div>
+
+</div>
+
+</div>
+<div class="menu-section" id="waxing">
+  <div class="menu-card pink">
+    <div class="menu-header">
+      <img src="images/sorbet-wax-temp1-768x240.webp" class="menu-image">
+    </div>
+
+    <h2>Face Waxing</h2>
+    <div class="service"><span>Brow Shape</span><span>R95</span></div>
+    <div class="service"><span>Lip</span><span>R65</span></div>
+    <div class="service"><span>Chin</span><span>R70</span></div>
+    <div class="service"><span>Side of Face</span><span>R120</span></div>
+    <div class="service"><span>Full Face</span><span>R230</span></div>
+
+    <h2>Upper Body</h2>
+    <div class="service"><span>Underarm</span><span>R120</span></div>
+    <div class="service"><span>Half Arm</span><span>R160</span></div>
+    <div class="service"><span>Full Arm</span><span>R210</span></div>
+    <div class="service"><span>Chest</span><span>R240</span></div>
+    <div class="service"><span>Back</span><span>R260</span></div>
+
+    <h2>Lower Body</h2>
+    <div class="service"><span>Half Leg</span><span>R210</span></div>
+    <div class="service"><span>Full Leg</span><span>R320</span></div>
+    <div class="service"><span>Bikini Line</span><span>R170</span></div>
+    <div class="service"><span>Brazilian</span><span>R350</span></div>
+    <div class="service"><span>Hollywood</span><span>R380</span></div>
+
+    <h2>Wax Combos</h2>
+    <div class="service"><span>Half Leg + Bikini</span><span>R350</span></div>
+    <div class="service"><span>Full Leg + Bikini</span><span>R450</span></div>
+    <div class="service"><span>Full Leg + Brazilian</span><span>R520</span></div>
+    <div class="service"><span>Underarm + Bikini</span><span>R260</span></div>
+  </div>
+</div>
+
+
+<div class="menu-section" id="skin">
+  <div class="menu-card pink">
+    <div class="menu-header">
+      <img src="images/sorbet-skin-temp1.webp" class="menu-image">
+    </div>
+
+    <h2>Express Facials</h2>
+    <div class="service"><span>Express Facial</span><span>R320</span></div>
+    <div class="service"><span>Hydrating Facial</span><span>R350</span></div>
+    <div class="service"><span>Purifying Facial</span><span>R360</span></div>
+
+    <h2>Advanced Facials</h2>
+    <div class="service"><span>Deep Cleansing Facial</span><span>R480</span></div>
+    <div class="service"><span>Brightening Facial</span><span>R520</span></div>
+    <div class="service"><span>Anti-Age Facial</span><span>R580</span></div>
+    <div class="service"><span>Hydra Facial</span><span>R620</span></div>
+
+    <h2>Peels</h2>
+    <div class="service"><span>Enzyme Peel</span><span>R420</span></div>
+    <div class="service"><span>Glycolic Peel</span><span>R450</span></div>
+    <div class="service"><span>Lactic Acid Peel</span><span>R460</span></div>
+
+    <h2>Skin Add-Ons</h2>
+    <div class="service"><span>Eye Treatment</span><span>R120</span></div>
+    <div class="service"><span>Collagen Mask</span><span>R150</span></div>
+    <div class="service"><span>LED Light Therapy</span><span>R180</span></div>
+    <div class="service"><span>Extra Extraction</span><span>R100</span></div>
+
+    <h2>Skin Combos</h2>
+    <div class="service"><span>Facial + LED Therapy</span><span>R650</span></div>
+    <div class="service"><span>Facial + Peel</span><span>R700</span></div>
+    <div class="service"><span>Facial + Collagen Mask</span><span>R680</span></div>
+  </div>
+</div>
+
+
+<div class="menu-section" id="men">
+  <div class="menu-card pink">
+    <img src="images/sorber-man-hands-768x240.png" class="menu-image">
+      
+
+    <h2>Haircuts</h2>
+    <div class="service"><span>Classic Haircut</span><span>R180</span></div>
+    <div class="service"><span>Skin Fade</span><span>R200</span></div>
+    <div class="service"><span>Buzz Cut</span><span>R120</span></div>
+    <div class="service"><span>Haircut & Wash</span><span>R220</span></div>
+
+    <h2>Beard Grooming</h2>
+    <div class="service"><span>Beard Trim</span><span>R90</span></div>
+    <div class="service"><span>Beard Shape</span><span>R110</span></div>
+    <div class="service"><span>Hot Towel Shave</span><span>R160</span></div>
+
+    <h2>Hands & Feet</h2>
+    <div class="service"><span>Men Manicure</span><span>R220</span></div>
+    <div class="service"><span>Men Pedicure</span><span>R240</span></div>
+    <div class="service"><span>Express Pedicure</span><span>R180</span></div>
+
+    <h2>Facials</h2>
+    <div class="service"><span>Express Men's Facial</span><span>R320</span></div>
+    <div class="service"><span>Deep Cleansing Facial</span><span>R480</span></div>
+    <div class="service"><span>Anti-Age Facial</span><span>R520</span></div>
+
+    <h2>Massages</h2>
+    <div class="service"><span>Back & Neck Massage</span><span>R300</span></div>
+    <div class="service"><span>Full Body Massage</span><span>R650</span></div>
+    <div class="service"><span>Head Massage</span><span>R180</span></div>
+
+    <h2>Waxing</h2>
+    <div class="service"><span>Chest Wax</span><span>R260</span></div>
+    <div class="service"><span>Back Wax</span><span>R280</span></div>
+    <div class="service"><span>Shoulder Wax</span><span>R150</span></div>
+  </div>
+</div>
+
+</div>
+
+<main>
+    <!-- all your page content here -->
+</main>
+
+<footer class="sorbet-footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Let's Connect</h4>
+        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
+        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+        <a class="footer-cta" href="booking.html">Book now</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+       <div class="footer-col">
+          <h4>Services</h4>
+          <a href="salon.html">Salon</a>
+          
+          <a href="man.html">MAN</a>
+          <a href="products.html">Candis&Co</a>
+          <a href="products.html">Gift Cards</a>
+          <a href="products.html">Products</a>
+        </div>
+        <div class="footer-col">
+          <h4>Your Sorbet</h4>
+          <a href="booking.html">Book Online</a>
+          <a href="contact.html">Store Locator</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">Sorbet story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-logo">Sorbet</div>
+      <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
+      <div class="footer-links">
+        <a href="#">T&amp;Cs</a>
+        <a href="#">Refunds &amp; Returns</a>
+        <a href="#">PAIA</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </footer>  
+
+
+<script src="main.js"></script>
+<script src="menu.js"></script>
+
+</body>
+
+</html>

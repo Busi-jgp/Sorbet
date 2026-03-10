@@ -54,9 +54,7 @@ html, body{
   background-color:  #5AB3D1 ;
   color: white;
 }
-nav li:first-child{
-  margin-right: auto;
-}
+
 li::marker {
   content: "";
 }
