@@ -629,7 +629,41 @@ footer {
   }
 }
 @media (max-width: 640px) {
-  
+  .contact-section{
+    padding:30px 16px;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+  form,
+  .contact-section form{
+    width:100%;
+    max-width:480px;
+  }
+  .whatsapp-section{
+    width:100%;
+    padding:24px;
+  }
+  .map-section iframe{
+    width:100% !important;
+    height:320px;
+  }
+  .int-bar{
+    flex-wrap:wrap;
+  }
+  .grid-two,
+  .shell .grid-two{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .booking-page{
+    padding:28px 16px;
+    margin-top:-20px;
+  }
+  .booking-hero{
+    padding:120px 18px 80px;
+  }
   .sorbet-footer .footer-top {
     grid-template-columns: 1fr;
   }
