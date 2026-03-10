@@ -146,3 +146,51 @@ header{
     gap:10px;
   }
 }
+.card img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+.card{
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  padding:15px;
+  text-align:center;
+  width:100%;
+}
+
+.card h3{
+  font-size:1.2rem;
+}
+
+.card p{
+  font-size:0.9rem;
+}
+
+@media (max-width:768px){
+
+.cards-container{
+  padding:15px;
+  gap:15px;
+}
+
+.card{
+  padding:12px;
+}
+
+}
+
+@media (max-width:480px){
+
+.card h3{
+  font-size:1rem;
+}
+
+.card p{
+  font-size:0.85rem;
+}
+
+}
