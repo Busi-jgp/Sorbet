@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,59 +17,81 @@
       display: flex;
       flex-direction: column;
     }
-    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-    .product-img { width: 100%; height: 260px; object-fit: cover; display: block; }
-    .product-info { padding: 1.5rem; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
-    .product-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-primary); }
-    .product-desc { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 1rem; flex-grow: 1; }
-    .product-price { font-weight: bold; font-size: 1.1rem; color: var(--color-text); }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--color-text);
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Mobile Menu Backdrop -->
-  <div class="menu-backdrop" id="menuBackdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+  <nav>
+    <ul class="nav-links">
+      <img class="logo-img" src="images/sorbet-logo-m-1.webp" alt="sorbet-logo">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="salon.html">Salon</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="man.html">Man</a></li>
+    </ul>
+  </nav>
 
-  <!-- Mobile Menu -->
-  <aside class="mobile-menu" id="menuPanel">
-    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-    <nav class="mobile-nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="salon.html">Salon</a>
-      <a href="man.html">Man</a>
-      <a href="contact.html">Contact</a>
-      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
-    </nav>
-  </aside>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="logo">Sorbet</a>
-      
-      <!-- Desktop Nav -->
-      <nav class="nav-links">
-        <a href="about.html">About</a>
-        <a href="salon.html">Salon</a>
-        <a href="man.html">Man</a>
-        <a href="contact.html">Contact</a>
-        <a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Online</a>
-      </nav>
 
-      <!-- Mobile Toggle -->
-      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
+
+  <header class="product-header">
+
+    <h1>Leading Brands and Products</h1>
+    <p>Home to 85 professional brands, Sorbet is the largest retailer of Dermalogica, Environ, Be Bright, Heliocare and
+      Motherkind in South Africa.</p>
+
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(rgba(55,19,103,0.7), rgba(55,19,103,0.8)), url('images/Products_HEADR.jpg') center/cover; padding: 6rem 0;">
+    <section class="hero"
+      style="background: linear-gradient(rgba(55,19,103,0.7), rgba(55,19,103,0.8)), url('images/Products_HEADR.jpg') center/cover; padding: 6rem 0;">
       <div class="container hero-content">
         <h1 style="font-size: 3.5rem;">Leading Brands & Products</h1>
-        <p style="font-size: 1.25rem;">Home to 85 professional brands, Sorbet is the largest retailer of Dermalogica, Environ, Be Bright, Heliocare and Motherkind in South Africa.</p>
+        <p style="font-size: 1.25rem;">Home to 85 professional brands, Sorbet is the largest retailer of Dermalogica,
+          Environ, Be Bright, Heliocare and Motherkind in South Africa.</p>
       </div>
     </section>
 
@@ -77,15 +100,19 @@
       <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-lg">
           <div>
-            <span style="display: inline-block; background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem;">Featured Product</span>
+            <span
+              style="display: inline-block; background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem;">Featured
+              Product</span>
             <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">NEW IN: <br>Sorbet Age Affect Range</h2>
             <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
-              Targeting more mature skin, Sorbet Age Affect harnesses the power of science and nature to produce an anti-aging solution that visibly achieves some youthful clout.
+              Targeting more mature skin, Sorbet Age Affect harnesses the power of science and nature to produce an
+              anti-aging solution that visibly achieves some youthful clout.
             </p>
             <button class="btn btn-primary">Shop Now</button>
           </div>
           <div>
-            <div style="width: 100%; height: 400px; background-color: var(--color-background); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--color-text-light); border: 2px dashed var(--color-border);">
+            <div
+              style="width: 100%; height: 400px; background-color: var(--color-background); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--color-text-light); border: 2px dashed var(--color-border);">
               <span>[Featured Image]</span>
             </div>
           </div>
@@ -93,147 +120,169 @@
       </div>
     </section>
 
-    <!-- Product Grid -->
-    <section class="section">
-      <div class="container">
-        <h2 class="text-center mb-lg" style="font-size: 2.5rem;">Top Sellers</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-md">
-          <div class="product-card">
-            <img class="product-img" src="images/hydra-cool.jpg" alt="Hydra Cool Body Lotion">
-            <div class="product-info">
-              <h3 class="product-title">Hydra Cool Body Lotion</h3>
-              <p class="product-desc">Refreshing and hydrating lotion for soft, smooth skin.</p>
-              <div class="product-price">R349</div>
-            </div>
-          </div>
 
-          <div class="product-card">
-            <img class="product-img" src="images/rejuvenating-hand-and-body-lotion.jpg" alt="Rejuvenating Hand & Body Lotion">
-            <div class="product-info">
-              <h3 class="product-title">Rejuvenating Hand & Body Lotion</h3>
-              <p class="product-desc">Replenishes moisture and revitalizes tired skin.</p>
-              <div class="product-price">R299</div>
-            </div>
-          </div>
+    <section class="products">
 
-          <div class="product-card">
-            <img class="product-img" src="images/firming-hand-and-body-lotion.jpg" alt="Firming Hand & Body Lotion">
-            <div class="product-info">
-              <h3 class="product-title">Firming Hand & Body Lotion</h3>
-              <p class="product-desc">Helps improve skin elasticity for a youthful feel.</p>
-              <div class="product-price">R349</div>
-            </div>
-          </div>
 
-          <div class="product-card">
-            <img class="product-img" src="images/fusion-meso-eye-sorbet.jpg" alt="Fusion Meso Eye Sorbet">
-            <div class="product-info">
-              <h3 class="product-title">Fusion Meso Eye Sorbet</h3>
-              <p class="product-desc">Premium eye serum for bright, refreshed under-eyes.</p>
-              <div class="product-price">R499</div>
-            </div>
-          </div>
+      <div class="product-card">
+        <img src="images/hydra-cool.jpg" alt="Hydra Cool Body Lotion">
+        <div class="product-info">
+          <h3>Hydra Cool Body Lotion</h3>
+          <p>Refreshing and hydrating lotion for soft, smooth skin.</p>
+          <li>R349</li>
 
-          <div class="product-card">
-            <img class="product-img" src="images/strawberry-sorbet-body-scrub.jpg" alt="Strawberry Sherbet Body Scrub">
-            <div class="product-info">
-              <h3 class="product-title">Strawberry Sherbet Body Scrub</h3>
-              <p class="product-desc">Sweet strawberry scrub to exfoliate and smooth skin.</p>
-              <div class="product-price">R249</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/Environ-products.jpg" alt="Exuviance Vitamin C">
-            <div class="product-info">
-              <h3 class="product-title">Exuviance</h3>
-              <p class="product-desc">Vitamin C Serum Capsules</p>
-              <div class="product-price">R750</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/moroccanoil.jpg" alt="Moroccan Oil">
-            <div class="product-info">
-              <h3 class="product-title">Moroccan Oil</h3>
-              <p class="product-desc">Original Treatment Oil</p>
-              <div class="product-price">R650</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/morgan-taylor.jpg" alt="Morgan Taylor">
-            <div class="product-info">
-              <h3 class="product-title">Morgan Taylor</h3>
-              <p class="product-desc">Sparkle Nail Polish</p>
-              <div class="product-price">R180</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/aloe-vera.jpg" alt="Aloe Vera Soothing Gel">
-            <div class="product-info">
-              <h3 class="product-title">Aloe Vera Soothing Gel</h3>
-              <p class="product-desc">Calms and hydrates sun-exposed or sensitive skin.</p>
-              <div class="product-price">R199</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/apricot-sorbet-body-scrub.jpg" alt="Apricot Sorbet Body Scrub">
-            <div class="product-info">
-              <h3 class="product-title">Apricot Sorbet Body Scrub</h3>
-              <p class="product-desc">Gentle exfoliation for a radiant and smooth complexion.</p>
-              <div class="product-price">R220</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/coconut-body-butter.jpg" alt="Coconut Body Butter">
-            <div class="product-info">
-              <h3 class="product-title">Coconut Body Butter</h3>
-              <p class="product-desc">Rich and creamy moisture for dry winter skin.</p>
-              <div class="product-price">R310</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/lavender-hand-cream.jpg" alt="Lavender Hand Cream">
-            <div class="product-info">
-              <h3 class="product-title">Lavender Hand Cream</h3>
-              <p class="product-desc">Relieves dryness and leaves hands soft and scented.</p>
-              <div class="product-price">R150</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/rose-body-lotion.jpg" alt="Rose Body Lotion">
-            <div class="product-info">
-              <h3 class="product-title">Rose Body Lotion</h3>
-              <p class="product-desc">A delicate floral scent with fast-absorbing hydration.</p>
-              <div class="product-price">R250</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/vanilla-sum-sum.jpg" alt="Vanilla Sugar Body Polish">
-            <div class="product-info">
-              <h3 class="product-title">Vanilla Sugar Body Polish</h3>
-              <p class="product-desc">Sloughs away dead cells, leaving a sweet vanilla scent.</p>
-              <div class="product-price">R280</div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img class="product-img" src="images/vitamin-c.jpg" alt="Vitamin C Brightening Serum">
-            <div class="product-info">
-              <h3 class="product-title">Vitamin C Brightening Serum</h3>
-              <p class="product-desc">Boosts radiance and targets uneven skin tone.</p>
-              <div class="product-price">R550</div>
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/rejuvenating-hand-and-body-lotion.jpg" alt="Rejuvenating Hand & Body Lotion">
+        <div class="product-info">
+          <h3>Rejuvenating Hand & Body Lotion</h3>
+          <p>Replenishes moisture and revitalizes tired skin.</p>
+          <li>R299</li>
+
+        </div>
+      </div>
+
+
+
+      <div class="product-card">
+        <img src="images/firming-hand-and-body-lotion.jpg" alt="Firming Hand & Body Lotion">
+        <div class="product-info">
+          <h3>Firming Hand & Body Lotion</h3>
+          <p>Helps improve skin elasticity for a youthful feel.</p>
+          <li>R349</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/fusion-meso-eye-sorbet.jpg" alt="Fusion Meso Eye Sorbet">
+        <div class="product-info">
+          <h3>Fusion Meso Eye Sorbet</h3>
+          <p>Premium eye serum for bright, refreshed under-eyes.</p>
+          <li>R499</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/strawberry-sorbet-body-scrub.jpg" alt="Strawberry Sherbet Body Scrub">
+        <div class="product-info">
+          <h3>Strawberry Sherbet Body Scrub</h3>
+          <p>Sweet strawberry scrub to exfoliate and smooth skin.</p>
+          <li>R249</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/apricot-sorbet-body-scrub.jpg" alt="Apricot Sherbet Body Scrub">
+        <div class="product-info">
+          <h3>Apricot Sherbet Body Scrub</h3>
+          <p>Gentle apricot scrub that leaves skin soft and glowing.</p>
+          <li>R299</li>
+          <button class="add-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/coconut-body-butter.jpg" alt="Coconut Body Butter">
+        <div class="product-info">
+          <h3>Coconut Body Butter</h3>
+          <p>Rich body butter for deep nourishment and silky skin.</p>
+          <li>R399</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/lavender-hand-cream.jpg" alt="Lavender Hand Cream">
+        <div class="product-info">
+          <h3>Lavender Hand Cream</h3>
+          <p>Calming lavender hand cream for soft, moisturized hands.</p>
+          <li>R199</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/vanilla-sum-sum.jpg " alt="Vanilla Body Mist">
+        <div class="product-info">
+          <p>Light fragrance mist to refresh your body anytime.</p>
+          <li>R149</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/aloe-vera.jpg" alt="Aloe Vera Gel">
+        <div class="product-info">
+          <h3>Aloe Vera Gel</h3>
+          <p>Soothing gel for calm, hydrated skin after sun or treatments.</p>
+          <li>R179</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/vitamin-c.jpg" alt="Vitamin C Serum">
+        <div class="product-info">
+          <h3>Vitamin C Serum</h3>
+          <p>Brightening serum to reduce dark spots and even skin tone.</p>
+          <li>R399</li>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/rose-body-lotion.jpg" alt="Rose Body Lotion">
+        <div class="product-info">
+          <h3>Rose Body Lotion</h3>
+          <p>Light rose-scented lotion for soft, fragrant skin.</p>
+          <li>R279</li>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="product-card">
+        <img src="images/Environ-products.jpg" alt="Exuviance">
+        <div class="product-info">
+          <h3>Exuviance</h3>
+          <p>Vitamin C Serum Capsules</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="images/rose-body-lotion.jpg" alt="Rose Body Lotion">
+        <div class="product-info">
+          <h3 class="product-title">Rose Body Lotion</h3>
+          <p class="product-desc">A delicate floral scent with fast-absorbing hydration.</p>
+          <div class="product-price">R250</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="images/vanilla-sum-sum.jpg" alt="Vanilla Sugar Body Polish">
+        <div class="product-info">
+          <h3 class="product-title">Vanilla Sugar Body Polish</h3>
+          <p class="product-desc">Sloughs away dead cells, leaving a sweet vanilla scent.</p>
+          <div class="product-price">R280</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="images/vitamin-c.jpg" alt="Vitamin C Brightening Serum">
+        <div class="product-info">
+          <h3 class="product-title">Vitamin C Brightening Serum</h3>
+          <p class="product-desc">Boosts radiance and targets uneven skin tone.</p>
+          <div class="product-price">R550</div>
+        </div>
+      </div>
+      </div>
       </div>
     </section>
   </main>
@@ -244,7 +293,8 @@
         <div class="footer-col">
           <h4>Let's Connect</h4>
           <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
-          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
+            treatments, promotions and tips to get that feeling.</p>
           <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
@@ -271,11 +321,13 @@
       </div>
       <div class="footer-bottom">
         <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
-        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html" style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
+            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
     </div>
   </footer>
 
   <script src="main.js"></script>
 </body>
+
 </html>
