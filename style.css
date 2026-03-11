@@ -2,7 +2,7 @@
 
 :root {
   /* Colors */
-  --color-primary: #720eec;
+  --color-primary: #832eeb;
   /* Vibrant Purple (DUBE inspiration) */
   --color-secondary: #1ba6a6;
   /* Sorbet Teal */
@@ -686,30 +686,30 @@ button {
     padding: 1.25rem !important;
   }
 
-  /* --- Man page: booking form --- */
+
   .booking-form input,
   .booking-form select {
     padding: 0.85rem !important;
   }
 
-  /* --- Video embed --- */
+
   .video-embed {
     border-radius: var(--radius-sm) !important;
   }
 
-  /* --- Contact: WhatsApp & Email card buttons --- */
+
   .card button[type="submit"],
   .card .btn {
     width: 100%;
     text-align: center;
   }
 
-  /* --- index.html brand highlight h2 --- */
+
   section[style*="background-color: var(--color-primary)"] h2 {
     font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
   }
 
-  /* --- Policy Page: fix hero --- */
+
   .hero[style*="min-width"] {
     min-width: unset !important;
     width: 100% !important;

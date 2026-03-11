@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,37 +9,120 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Old Menu Styles Merged */
-    .menu-tabs { display: flex; gap: 10px; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem; }
-    .tab { background: #18a7a0; border: none; padding: 12px 22px; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; white-space: nowrap; transition: var(--transition); }
-    .tab:hover { background: #138781; }
-    .tab.active { background: var(--color-primary); color: white; }
-    
-    .menu-section { display: none; animation: fadeIn 0.3s ease; }
-    .menu-section.active { display: block; }
+    .menu-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
 
-    .menu-card { padding: 40px; border-radius: 15px; box-shadow: var(--shadow-sm); }
-    .menu-card.pink { background: var(--color-primary); color: white; }
-    .menu-card.black { background: #1c1c1c; color: white; }
-    
-    .menu-header { margin-bottom: 2rem; text-align: center; }
-    .menu-header img { width: 100%; max-width: 620px; border-radius: 10px; margin: 0 auto; display: block; }
-    
-    .menu-section h2 { font-size: 2rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 0.5rem; margin-top: 2rem; }
-    .menu-section h3 { margin-top: 30px; margin-bottom: 10px; font-size: 1.5rem; color: #fff; }
-    
-    .service { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.4); font-size: 1.1rem; }
-    .service span:last-child { font-weight: bold; }
-    
+    .tab {
+      background: #18a7a0;
+      border: none;
+      padding: 12px 22px;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .tab:hover {
+      background: #138781;
+    }
+
+    .tab.active {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .menu-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .menu-section.active {
+      display: block;
+    }
+
+    .menu-card {
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .menu-card.pink {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .menu-card.black {
+      background: #1c1c1c;
+      color: white;
+    }
+
+    .menu-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .menu-header img {
+      width: 100%;
+      max-width: 620px;
+      border-radius: 10px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .menu-section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .menu-section h3 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .service {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+      font-size: 1.1rem;
+    }
+
+    .service span:last-child {
+      font-weight: bold;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Mobile Menu Backdrop -->
-  <div class="menu-backdrop" id="menuBackdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+  <div class="menu-backdrop" id="menuBackdrop"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
 
   <!-- Mobile Menu -->
   <aside class="mobile-menu" id="menuPanel">
@@ -49,7 +133,7 @@
       <a href="salon.html">Salon</a>
       <a href="man.html">Man</a>
       <a href="contact.html">Contact</a>
-      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
+      <a href="booking.html" class="btn btn-tertiary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
     </nav>
   </aside>
 
@@ -57,7 +141,7 @@
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="logo">Sorbet</a>
-      
+
       <!-- Desktop Nav -->
       <nav class="nav-links">
         <a href="about.html">About</a>
@@ -75,18 +159,19 @@
   </header>
 
   <main>
-    <section class="hero" style="background: linear-gradient(rgba(114, 14, 236, 0.7), rgba(114, 14, 236, 0.9)), url('images/treatment.webp') center/cover; padding: 6rem 0;">
+    <section class="hero" style="background: url('images/treatment.webp') center/cover; padding: 6rem 0;">
       <div class="container hero-content">
         <h1 style="font-size: 3.5rem;">Treatment Menu</h1>
         <p style="font-size: 1.25rem;">Beauty treatments for every body. Explore our full menu below.</p>
-        <a href="booking.html" class="btn btn-primary mt-sm" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Book Online</a>
+        <a href="booking.html" class="btn btn-primary mt-sm" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Book
+          Online</a>
       </div>
     </section>
 
     <!-- Treatments Menu -->
     <section class="section" style="background-color: var(--color-background);">
       <div class="container" style="max-width: 900px;">
-        
+
         <div class="menu-tabs">
           <button class="tab active" onclick="openMenu('nails', this)">Nails</button>
           <button class="tab" onclick="openMenu('brows', this)">Brows and Lashes</button>
@@ -96,18 +181,18 @@
         </div>
 
         <div class="menu-container">
-          
+
           <!-- Nails -->
           <div class="menu-section active" id="nails">
             <div class="menu-card pink">
               <div class="menu-header">
                 <img src="images/sorbet-nails-temp2b.webp" alt="Nails">
               </div>
-              
+
               <h3>Soft Gel Tips</h3>
               <div class="service"><span>Soft Gel Tips + Gelish</span><span>R605</span></div>
               <div class="service"><span>Soft Gel Tips + Gelish with Backfill</span><span>R520</span></div>
-              
+
               <h3>Gel Polish</h3>
               <div class="service"><span>Gel Polish Hands Only</span><span>R350</span></div>
               <div class="service"><span>Gel Polish Feet Only</span><span>R350</span></div>
@@ -116,7 +201,7 @@
               <div class="service"><span>Gel Polish Mini Feet</span><span>R480</span></div>
               <div class="service"><span>Gel Polish Power Hands</span><span>R540</span></div>
               <div class="service"><span>Gel Polish Power Feet</span><span>R560</span></div>
-              
+
               <h3>Manicures & Pedicures</h3>
               <div class="service"><span>Quick Hands</span><span>R205</span></div>
               <div class="service"><span>Quick Feet</span><span>R220</span></div>
@@ -133,18 +218,18 @@
               <div class="menu-header">
                 <img src="images/sorbet-brow-temp1-768x240.webp" alt="Brows">
               </div>
-              
+
               <h3>Threading</h3>
               <div class="service"><span>Brows</span><span>R130</span></div>
               <div class="service"><span>Brows + Lip</span><span>R220</span></div>
               <div class="service"><span>Brows + Chin</span><span>R220</span></div>
               <div class="service"><span>Brows + Lip + Chin</span><span>R305</span></div>
               <div class="service "><span>Full Face</span><span>R310</span></div>
-              
+
               <h3>Brow Lamination</h3>
               <div class="service"><span>Brow Lamination</span><span>R495</span></div>
               <div class="service"><span>Brow Lamination + Wax + Tint</span><span>R665</span></div>
-              
+
               <h3>Lash Lift</h3>
               <div class="service"><span>Lash Lift</span><span>R495</span></div>
               <div class="service"><span>Lash Lift + Tint</span><span>R565</span></div>
@@ -228,7 +313,7 @@
             <div class="menu-card black">
               <div class="menu-header">
                 <img src="images/sorber-man-hands-768x240.png" class="menu-image" alt="Men's Grooming">
-              </div>  
+              </div>
 
               <h2>Haircuts</h2>
               <div class="service"><span>Classic Haircut</span><span>R180</span></div>
@@ -264,7 +349,7 @@
           </div>
 
         </div> <!-- /menu-container -->
-        
+
       </div>
     </section>
 
@@ -276,7 +361,8 @@
         <div class="footer-col">
           <h4>Let's Connect</h4>
           <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
-          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
+            treatments, promotions and tips to get that feeling.</p>
           <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
@@ -304,7 +390,8 @@
       </div>
       <div class="footer-bottom">
         <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
-        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html" style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
+            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
     </div>
   </footer>
@@ -316,11 +403,12 @@
       document.querySelectorAll('.menu-section').forEach(el => el.classList.remove('active'));
       // remove active from all tabs
       document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-      
+
       // show selected
       document.getElementById(sectionId).classList.add('active');
       btn.classList.add('active');
     }
   </script>
 </body>
+
 </html>
