@@ -1,110 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Checkout | Sorbet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbet — Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="product.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .checkout-form { max-width: 500px; margin: 0 auto; background: var(--color-surface); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+    .input-box { margin-bottom: 1.25rem; }
+    .input-box label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .input-box input { width: 100%; padding: 0.85rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; }
+  </style>
 </head>
-<body>
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="salon.html">Salon</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="man.html">Man</a></li>
-      </ul>
+<body style="background: url('images/book.jpg') center/cover fixed; position: relative;">
+  <div style="position: absolute; inset: 0; background: rgba(55,19,103,0.8); z-index: -1;"></div>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" id="menuBackdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="menuPanel">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="salon.html">Salon</a>
+      <a href="man.html">Man</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
     </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header" style="background: rgba(255, 255, 255, 0.95); position: sticky; top: 0;">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Sorbet</a>
+      
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="about.html">About</a>
+        <a href="salon.html">Salon</a>
+        <a href="man.html">Man</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Online</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
   </header>
+
   <main>
-   
+    <section class="section">
+      <div class="container">
+        
+        <form class="checkout-form" id="checkoutForm" onsubmit="event.preventDefault(); alert('Payment successful! Your appointment is confirmed.'); window.location.href='index.html';">
+          <h2 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem; font-size: 2rem;">Complete Payment</h2>
+          
+          <div class="input-box">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" pattern="[0-9]{16}" required>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-sm">
+            <div class="input-box">
+              <label for="expiryDate">Expiry Date</label>
+              <input type="text" id="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="input-box">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="123" pattern="[0-9]{3,4}" required>
+            </div>
+          </div>
+          
+          <div class="input-box">
+            <label for="cardName">Name on Card</label>
+            <input type="text" id="cardName" placeholder="Alex Dlamini" required>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">Pay R200 Deposit</button>
+          
+          <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-light); margin-top: 1rem;">
+            <i class="fas fa-lock" style="margin-right: 0.5rem;"></i> Secure Encrypted Transaction
+          </p>
+        </form>
 
-    <section class="checkout">
-  <h2>Secure Payment</h2>
-
-  <form id="paymentForm">
-    <div class="input-box">
-      <label>Cardholder Name</label>
-      <input type="text" placeholder="Full name" required>
-    </div>
-
-    <div class="input-box">
-      <label>Card Number</label>
-      <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
-    </div>
-
-    <div class="row">
-      <div class="input-box">
-        <label>Expiry Date</label>
-        <input type="text" placeholder="MM/YY" maxlength="5" required>
       </div>
-
-      <div class="input-box">
-        <label>CVV</label>
-        <input type="password" maxlength="3" required>
-      </div>
-    </div>
-
-    <div class="input-box">
-      <label>Billing Address</label>
-      <input type="text" placeholder="Street address" required>
-    </div>
-
-    <button type="submit" class="pay-btn">Pay Now</button>
-  </form>
-</section>
+    </section>
   </main>
 
-   <footer class="sorbet-footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h4>Let's Connect</h4>
-        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
-        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
-        <a class="footer-cta" href="booking.html">Book now</a>
-        <div class="footer-social">
-          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-       <div class="footer-col">
-          <h4>Services</h4>
-          <a href="salon.html">Salon</a>
-          
-          <a href="man.html">MAN</a>
-           <a href="products.html">Candis&Co</a>
-          <a href="products.html">Gift Cards</a>
-          <a href="products.html">Products</a>
-        </div>
-        <div class="footer-col">
-          <h4>Your Sorbet</h4>
-          <a href="booking.html">Book Online</a>
-          <a href="contact.html">Store Locator</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html">Sorbet story</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <div class="footer-logo">Sorbet</div>
-      <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
-      <div class="footer-links">
-        
-        <a href="policy.html">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
-      </div>
-    </div>
-  </footer> 
-
-   <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

@@ -1,125 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Contact</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="email.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbet — Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body >
- 
-  <nav class="int-bar" >
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="salon.html">Salon</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="man.html">Man</a></li>
-  </nav>
-   
-<header class="sorbet-box"> 
-  
-  <h1 class="sobi-head">Get In Touch</h1>
-</header>
-  
-</div>
-<main class="shell">
-    <section  class="pill">
-      <div >
-      <h2>Got questions? We’re here to help.</h2>
-      </div>
-    </section>
-    <section class="section">
-      <div class="grid-two">
-        <div class="card">
-          <h3>Call or text</h3>
-          <p class="muted"><a href="tel:+1234567890">(123) 456-7890</a>
-            <br>Daily 9am – 8pm</p>
-        </div>
-        <div class="card">
-          <h3>Visit</h3>
-          <p class="muted"><a href="https://www.google.com/maps/search/sorbet+cape+town/@-33.9039917,8.6639947,6z?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Sorbet Salon, V & A Waterfront, 7201 Victoria Wharf, Green Point, Cape Town, 8002</a>
-            <br>Parking validated for 2 hours.</p>
-          </div>
-        <div class="card">
-          <h3>Social</h3>
-          <p class="muted"><a href="https://instagram.com/sorbetgroup" target="_blank">
-            <br>Instagram @sorbetgroup</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
-   <section class="contact-section">
-    <form action="https://formspree.io/f/xbdavblw" method="POST">
-     
-      <h1>Email Us</h1>
-        
-        <input type="text" name="name" placeholder="Full Name" required>
+<body>
 
-        <input type="email" name="email" placeholder="Email Address" required>
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" id="menuBackdrop"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
 
-        <input type="tel" name="phone" placeholder="Phone Number">
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="menuPanel">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="salon.html">Salon</a>
+      <a href="man.html">Man</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
+    </nav>
+  </aside>
 
-        <textarea name="message" placeholder="Write your message here..." rows="6" required></textarea>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Sorbet</a>
 
-        <button type="submit">Send Message</button>
-    </form>
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="about.html">About</a>
+        <a href="salon.html">Salon</a>
+        <a href="man.html">Man</a>
+        <a href="contact.html" style="color: var(--color-secondary);">Contact</a>
+        <a href="booking.html" class="btn btn-tertiary" style="padding: 0.5rem 1rem;">Book Online</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </header>
 
-<section class="whatsapp-section">
+  <main>
+    <!-- Page Header -->
+    <section class="hero"
+      style="background: url('images/Sorbet-Contact-us-website-banner.webp') center/cover; padding: 5rem 0;">
+      <div class="container hero-content">
+        <h1 style="font-size: 3.5rem;">Get In Touch</h1>
+        <p style="font-size: 1.25rem;">Got questions? We’re here to help.</p>
+      </div>
+    </section>
 
-  <h2>Chat with us on WhatsApp</h2>
-  <p>Fill in your details and send us a message directly on WhatsApp</p>
+    <!-- Info Section -->
+    <section class="section" style="background-color: var(--color-surface);">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md text-center">
+          <div class="card">
+            <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Call or text</h3>
+            <p style="margin-top: 0.5rem;"><a href="tel:+1234567890"
+                style="color: var(--color-accent); font-weight: bold; font-size: 1.1rem;">(123) 456-7890</a></p>
+            <p style="color: var(--color-text-light);">Daily 9am – 8pm</p>
+          </div>
 
-  <form id="whatsappForm">
-    <label>Name</label>
-    <input type="text" id="name" placeholder="Enter your name" required>
+          <div class="card">
+            <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit</h3>
+            <p style="margin-top: 0.5rem;"><a
+                href="https://www.google.com/maps/search/sorbet+cape+town/@-33.9039917,8.6639947,6z?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" style="color: var(--color-accent); font-weight: bold;">Sorbet Salon, V & A
+                Waterfront</a></p>
+            <p style="color: var(--color-text-light);">Parking validated for 2 hours.</p>
+          </div>
 
-    <label>Message</label>
-    <textarea id="message" placeholder="Type your message here..." required></textarea>
-
-    <button type="submit">Send via WhatsApp</button>
-  </form>
-
-</section>
-</section>
-
-<section class="map-section">
-    <h2>Find Us Here</h2>
-
-    
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6781835.632939688!2d8.6639947!3d-33.9039917!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6750c6f2e13d%3A0xa64cc6f41d51e196!2sSorbet%20Salon!5e0!3m2!1sen!2sza!4v1772604437745!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
- </section>
- 
-
-<main>
-    <!-- all your page content here -->
-  </main>
-  <footer class="sorbet-footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h4>Let's Connect</h4>
-        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
-        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
-        <a class="footer-cta" href="booking.html">Book now</a>
-        <div class="footer-social">
-          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <div class="card">
+            <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <h3>Social</h3>
+            <p style="margin-top: 0.5rem;"><a href="https://instagram.com/sorbetgroup" target="_blank"
+                style="color: var(--color-accent); font-weight: bold; font-size: 1.1rem;">@sorbetgroup</a></p>
+            <p style="color: var(--color-text-light);">Follow us for updates.</p>
+          </div>
         </div>
       </div>
-       <div class="footer-col">
+    </section>
+
+    <!-- Forms Sections -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+
+          <!-- Email Form -->
+          <div class="card" style="text-align: left; align-items: stretch; border-top: 4px solid var(--color-primary);">
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Email Us</h2>
+            <form action="https://formspree.io/f/xbdavblw" method="POST"
+              style="display: flex; flex-direction: column; gap: 1rem;">
+              <input type="text" name="name" placeholder="Full Name" required
+                style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%;">
+              <input type="email" name="email" placeholder="Email Address" required
+                style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%;">
+              <input type="tel" name="phone" placeholder="Phone Number"
+                style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%;">
+              <textarea name="message" placeholder="Write your message here..." rows="6" required
+                style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%; resize: vertical;"></textarea>
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 0.5rem;">Send
+                Message</button>
+            </form>
+          </div>
+
+          <!-- WhatsApp Form -->
+          <div class="card"
+            style="text-align: left; align-items: stretch; border-top: 4px solid #25D366; background: #f0fff4;">
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: #128c7e;"><i class="fab fa-whatsapp"></i> WhatsApp
+            </h2>
+            <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">Fill in your details and send us a message
+              directly.</p>
+            <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 1rem;">
+              <input type="text" id="name" placeholder="Enter your name" required
+                style="padding: 1rem; border: 1px solid #c6f6d5; border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%;">
+              <textarea id="message" placeholder="Type your message here..." required
+                style="padding: 1rem; border: 1px solid #c6f6d5; border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; width: 100%; resize: vertical;"
+                rows="6"></textarea>
+              <button type="submit" class="btn"
+                style="align-self: flex-start; margin-top: 0.5rem; background-color: #25D366; color: white;">Send via
+                WhatsApp</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-lg" style="font-size: 2.5rem;">Find Us Here</h2>
+        <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); height: 450px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6781835.632939688!2d8.6639947!3d-33.9039917!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6750c6f2e13d%3A0xa64cc6f41d51e196!2sSorbet%20Salon!5e0!3m2!1sen!2sza!4v1772604437745!5m2!1sen!2sza"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
+            treatments, promotions and tips to get that feeling.</p>
+          <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
           <h4>Services</h4>
           <a href="salon.html">Salon</a>
-          
           <a href="man.html">MAN</a>
           <a href="products.html">Candis&Co</a>
           <a href="products.html">Gift Cards</a>
-          <a href="products.html">Products</a>
         </div>
         <div class="footer-col">
           <h4>Your Sorbet</h4>
@@ -128,25 +187,19 @@
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">Sorbet story</a>
+          <a href="about.html">Sorbet Story</a>
           <a href="contact.html">Contact Us</a>
         </div>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <div class="footer-logo">Sorbet</div>
-      <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
-      <div class="footer-links">
-        <a href="#">T&amp;Cs</a>
-        <a href="#">Refunds &amp; Returns</a>
-        <a href="#">PAIA</a>
-        <a href="policy.html">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
+            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
     </div>
-  </footer>  
+  </footer>
 
   <script src="main.js"></script>
-  <script src="script.js"></script>
 </body>
+
 </html>

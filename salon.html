@@ -1,147 +1,187 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sorbet — Beauty & Wellness</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body> 
 
-    
-     <section class="hero hero-mix">
-      <nav class="shell">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="man.html">Man</a></li>
-        </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbet — Salon & Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" id="menuBackdrop"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="menuPanel">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="salon.html">Salon</a>
+      <a href="man.html">Man</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Sorbet</a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="about.html">About</a>
+        <a href="salon.html" style="color: var(--color-secondary);">Salon</a>
+        <a href="man.html">Man</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Online</a>
       </nav>
-        <div class="hero-shell">
-          <div class="hero-copy">
-            
-            <h2>Transform your look with Sorbet</h2>
-            <p class="hero-tagline">Discover premium treatments across salon, nailbar, hairbar, and Sorbet MAN in a space designed for feel-good glow.</p>
-            <div class="hero-actions">
-              <a class="btn-primary" href="booking.html">Book Appointment</a>
-              <a class="btn-secondary" href="products.html">Shop Products</a>
-            </div>
-            <div class="hero-highlights">
-               
-              <span><a href="products.html">Products</a></span> 
-              <span><a href="man.html">Man</a></span>
-            </div>
-          </section>
 
-    <section class="featured-treatment">
-  <div class="treatment-container">
-
-     
-    <div class="treatment-image">
-      <span class="badge">Featured Treatment</span>
-      <img src="images/treatment.webp" alt="Microneedling">
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
+  </header>
 
-    
-    <div class="treatment-text">
-      <h2>Dermalogica PRO Microneedling</h2>
-      <hr>
-
-      <p>This minimally invasive treatment uses the most advanced techniques to:</p>
-
-      <ul>
-        <li>Brighten your complexion</li>
-        <li>Reduce the appearance of dark spots</li>
-        <li>Diminish the appearance of lines and wrinkles</li>
-        <li>Refine the look of pores</li>
-      </ul>
-        <a href="treatments.html" class="btn">View all treatments</a>
-    </div>
-
-  </div>
-</section>
-
-
- <section id="prducts">
-    <h2 style="text-align:center; font-size: 50px; margin: 150px; color: var(--secondary-purple);">Our Services</h2>
-    <div class="services-container">
-      <div class="card">
-        <img src="images/facials.jpg" alt="Facials">
-        <h3>Facials</h3>
-        <p>Deep cleansing, hydrating, and rejuvenating facials to leave your skin glowing.</p>
-      </div>
-      <div class="card">
-        <img src="images/manicure-&-pedicure.jpg" alt="Manicure & Pedicure">
-        <h3>Manicure & Pedicure</h3>
-        <p>Beautiful nails with luxurious treatments and long-lasting polish.</p>
-      </div>
-      <div class="card">
-        <img src="images/wax2.jpg" alt="Waxing"> 
-        <h3>Waxing</h3>
-        <p>Professional waxing services for smooth, soft, and hair-free skin.</p>
-      </div>
-      <div class="card">
-        <img src="images/massages.jpg" alt="Massages">
-        <h3>Massages</h3>
-        <p>Relax and unwind with our expert massage therapies for body and mind.</p>
-      </div>
-    </div>
-  </section>
-
-<section class="most-loved">
-
-  <h2><span>Most</span> loved treatments</h2>
-
-  <p class="intro">
-    The self-care game is strong at Sorbet Salon; we offer a wide array of skincare and beauty treatments.
-  </p>
-
-  <div class="treatment-box">
-
-    <img src="images/masagessss.webp" alt="Hands and feet">
-
-    <h3>Hands & feet</h3>
-
-    <p>
-      Nothing beats a fresh mani or pedi.
-      Choose from a range of treatments and application options.
-    </p>
-
-  </div>
-
-</section >
-
-<section class="feel-amazing">
-  <div class="overlay">
-    <h2>Feel amazing</h2>
-    <p>63 000+ facials a year</p>
-  </div>
-</section>
-
-<footer class="sorbet-footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h4>Let's Connect</h4>
-        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
-        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
-        <a class="footer-cta" href="booking.html">Book now</a>
-        <div class="footer-social">
-          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <main>
+    <!-- Hero Box -->
+    <section class="hero"
+      style="background:  url('images/Web-Banner-BOE-Mecca-scaled.jpg') center/cover; padding: 6rem 0;">
+      <div class="container hero-content">
+        <h1 style="font-size: 3.5rem;">Transform your look with Sorbet</h1>
+        <p style="font-size: 1.25rem;">Discover premium treatments across our salon. Specialized hair care, nail
+          perfection, and grooming in a space designed for feel-good glow.</p>
+        <div class="flex justify-center gap-sm mt-sm" style="flex-wrap: wrap;">
+          <a href="booking.html" class="btn btn-primary">Book Appointment</a>
+          <a href="hairbar.html" class="btn btn-secondary"
+            style="background: white; border-color: transparent;">Hairbar</a>
+          <a href="nailbar.html" class="btn btn-secondary"
+            style="background: white; border-color: transparent;">Nailbar</a>
         </div>
       </div>
-       <div class="footer-col">
+    </section>
+
+    <!-- Featured Treatment -->
+    <section class="section" style="background-color: var(--color-surface);">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-lg">
+          <div style="position: relative;">
+            <span
+              style="position: absolute; top: 1rem; left: 1rem; background: rgb(42, 151, 213); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem;">Featured
+              Treatment</span>
+            <img src="images/treatment.webp" alt="Microneedling"
+              style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+          </div>
+          <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Dermalogica PRO Microneedling</h2>
+            <hr style="border: none; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+            <p style="font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 1rem;">
+              This minimally invasive treatment uses the most advanced techniques to:
+            </p>
+            <ul
+              style="list-style-position: inside; font-size: 1.1rem; line-height: 1.8; color: var(--color-text); margin-bottom: 2rem;">
+              <li>Brighten your complexion</li>
+              <li>Reduce the appearance of dark spots</li>
+              <li>Diminish the appearance of lines and wrinkles</li>
+              <li>Refine the look of pores</li>
+            </ul>
+            <a href="treatments.html" class="btn btn-primary">View all treatments</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-lg" style="font-size: 2.5rem;">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+          <div class="card">
+            <img src="images/facials.jpg" alt="Facials"
+              style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+            <h3>Facials</h3>
+            <p>Deep cleansing, hydrating, and rejuvenating facials to leave your skin glowing.</p>
+          </div>
+          <div class="card">
+            <img src="images/manicure-&-pedicure.jpg" alt="Manicure & Pedicure"
+              style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+            <h3>Manicure & Pedicure</h3>
+            <p>Beautiful nails with luxurious treatments and long-lasting polish.</p>
+          </div>
+          <div class="card">
+            <img src="images/wax2.jpg" alt="Waxing"
+              style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+            <h3>Waxing</h3>
+            <p>Professional waxing services for smooth, soft, and hair-free skin.</p>
+          </div>
+          <div class="card">
+            <img src="images/massages.jpg" alt="Massages"
+              style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+            <h3>Massages</h3>
+            <p>Relax and unwind with our expert massage therapies for body and mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Most Loved -->
+    <section class="section" style="background-color: var(--color-surface); text-align: center;">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="font-size: 3rem; margin-bottom: 1rem;">Most loved treatments</h2>
+        <p style="font-size: 1.15rem; color: var(--color-text-light); margin-bottom: 2rem;">
+          The self-care game is strong at Sorbet Salon; we offer a wide array of skincare and beauty treatments.
+        </p>
+
+        <div
+          style="background-color: var(--color-background); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
+          <img src="images/masagessss.webp" alt="Hands and feet"
+            style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+          <h3 style="font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem;">Hands & feet</h3>
+          <p style="font-size: 1.1rem; color: var(--color-text);">
+            Nothing beats a fresh mani or pedi. Choose from a range of treatments and application options.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feel Amazing Banner -->
+    <section
+      style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/Salon-Fallback-web.webp') center/cover; padding: 6rem 0; text-align: center; color: white;">
+      <div class="container">
+        <h2 style="color: white; font-size: 3.5rem; margin-bottom: 1rem;">Feel amazing</h2>
+        <p style="font-size: 1.5rem; font-weight: 300;">63,000+ facials a year</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
+            treatments, promotions and tips to get that feeling.</p>
+          <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
           <h4>Services</h4>
           <a href="salon.html">Salon</a>
-          
           <a href="man.html">MAN</a>
           <a href="products.html">Candis&Co</a>
           <a href="products.html">Gift Cards</a>
-          <a href="products.html">Products</a>
         </div>
         <div class="footer-col">
           <h4>Your Sorbet</h4>
@@ -150,62 +190,19 @@
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">Sorbet story</a>
+          <a href="about.html">Sorbet Story</a>
           <a href="contact.html">Contact Us</a>
         </div>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <div class="footer-logo">Sorbet</div>
-      <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
-      <div class="footer-links">
-        <a href="#">T&amp;Cs</a>
-        <a href="#">Refunds &amp; Returns</a>
-        <a href="#">PAIA</a>
-        <a href="policy.html">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
+            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
     </div>
-  </footer>  
+  </footer>
 
-    <script src="main.js"></script>
-    </body>
-    </html>
-  
+  <script src="main.js"></script>
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

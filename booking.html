@@ -1,274 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Book Appointment | Sorbet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbet — Book Appointment</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="email.css" />
+  <style>
+    .booking-summary { background: var(--color-surface); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+    .booking-form { background: var(--color-surface); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+    .form-row { margin-bottom: 1.5rem; }
+    .form-row label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: inherit; }
+  </style>
 </head>
-<body class="booking-body">
-  <nav class="nav-bar booking-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="salon.html">Salon</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="man.html">Man</a></li>
-    </ul>
-  </nav>
+<body>
 
-  <header class="booking-hero">
-    <div class="booking-hero__content">
-      <p class="eyebrow">Book online</p>
-      <h1>Plan your next Sorbet visit</h1>
-      <p class="lede">Pick a service, choose your time, and secure it with a quick R200 deposit.</p>
-      <div class="booking-hero__chips">
-        <span class="booking-chip"><i class="fa-regular fa-clock"></i> Same-day slots</span>
-        <span class="booking-chip"><i class="fa-regular fa-pen-to-square"></i> Free changes up to 4 hours</span>
-        <span class="booking-chip"><i class="fa-solid fa-shield-heart"></i> Secure payments</span>
-      </div>
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" id="menuBackdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="menuPanel">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="salon.html">Salon</a>
+      <a href="man.html">Man</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Sorbet</a>
+      
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="about.html">About</a>
+        <a href="salon.html">Salon</a>
+        <a href="man.html">Man</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Online</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
-  <main class="booking-page">
-    <section class="booking-grid">
-      <div class="booking-summary">
-        <h2>Popular services</h2>
-        <p>Let us know what you need. We'll match you with the right therapist and keep you updated by email or SMS.</p>
-
-        <div class="service-grid">
-          <div class="service-card">
-            <h3>Nails</h3>
-            <ul>
-              <li>Soft Gel Tips + Gelish - R605</li>
-              <li>Soft Gel Tips + Gelish Backfill - R520</li>
-              <li>Gel Polish Hands - R350</li>
-              <li>Quick Hands - R205</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <h3>Brows &amp; Lashes</h3>
-            <ul>
-              <li>Brows (Threading) - R130</li>
-              <li>Brows + Lip - R220</li>
-              <li>Brow Lamination - R495</li>
-              <li>Lash Lift + Tint - R565</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <h3>Waxing</h3>
-            <ul>
-              <li>Underarm - R120</li>
-              <li>Half Leg - R210</li>
-              <li>Full Leg - R320</li>
-              <li>Brazilian - R350</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <h3>Skin Treatments</h3>
-            <ul>
-              <li>Express Facial - R320</li>
-              <li>Deep Cleansing Facial - R480</li>
-              <li>Hydra Facial - R620</li>
-              <li>Facial + LED Therapy - R650</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <h3>Men's Grooming</h3>
-            <ul>
-              <li>Classic Haircut - R180</li>
-              <li>Skin Fade - R200</li>
-              <li>Beard Trim - R90</li>
-              <li>Full Body Massage - R650</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="info-note">
-          <i class="fa-regular fa-circle-check"></i>
-          <span>Need a group booking or something special? Call <a href="tel:+27115670433">011 567 0433</a> or <a href="contact.html">chat with us</a>.</span>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(55,19,103,0.8), rgba(55,19,103,0.8)), url('images/book.jpg') center/cover; padding: 5rem 0;">
+      <div class="container hero-content">
+        <p style="font-size: 1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: var(--color-accent);">Book online</p>
+        <h1 style="font-size: 3rem;">Plan your next Sorbet visit</h1>
+        <p style="font-size: 1.25rem;">Pick a service, choose your time, and secure it with a quick R200 deposit.</p>
+        <div class="flex flex-wrap justify-center gap-sm mt-sm" style="font-size: 0.9rem;">
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px;"><i class="fa-regular fa-clock"></i> Same-day slots</span>
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px;"><i class="fa-regular fa-pen-to-square"></i> Free changes</span>
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px;"><i class="fa-solid fa-shield-heart"></i> Secure payments</span>
         </div>
       </div>
+    </section>
 
-      <form class="booking-form" id="bookingForm" action="checkout.html" method="get" novalidate>
-        <div class="form-row">
-          <label for="fullName">Full name</label>
-          <input type="text" id="fullName" name="name" placeholder="Alex Dlamini" autocomplete="name" required>
-        </div>
-
-        <div class="form-row two-col">
-          <div>
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+    <!-- Booking Form & Info -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+          
+          <!-- Services Summary -->
+          <div class="booking-summary">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Popular services</h2>
+            <p style="color: var(--color-text-light); margin-bottom: 2rem;">Let us know what you need. We'll match you with the right therapist and keep you updated by email or SMS.</p>
+            
+            <div class="grid grid-cols-1 gap-sm">
+              <div style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Nails</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem; color: var(--color-text-light);">
+                  <li>Soft Gel Tips + Gelish - <strong>R605</strong></li>
+                  <li>Gel Polish Hands - <strong>R350</strong></li>
+                </ul>
+              </div>
+              <div style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Skin Treatments</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem; color: var(--color-text-light);">
+                  <li>Express Facial - <strong>R320</strong></li>
+                  <li>Deep Cleansing Facial - <strong>R480</strong></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: var(--color-background); border-radius: var(--radius-sm); font-size: 0.9rem;">
+               <i class="fa-regular fa-circle-check" style="color: var(--color-accent); margin-right: 0.5rem;"></i> Need a group booking? Call <a href="tel:+27115670433" style="font-weight: bold; color: var(--color-primary);">011 567 0433</a>.
+            </div>
           </div>
-          <div>
-            <label for="phone">Mobile number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" inputmode="tel" autocomplete="tel" required>
-          </div>
-        </div>
 
-        <div class="form-row two-col">
-          <div>
-            <label for="service">Service</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <optgroup label="Nails">
-                <option value="soft-gel-tips-gelish">Soft Gel Tips + Gelish - R605</option>
-                <option value="soft-gel-backfill">Soft Gel Tips + Gelish Backfill - R520</option>
-                <option value="gel-polish-hands">Gel Polish Hands - R350</option>
-                <option value="gel-polish-feet">Gel Polish Feet - R350</option>
-                <option value="quick-hands">Quick Hands - R205</option>
-                <option value="quick-feet">Quick Feet - R220</option>
-              </optgroup>
-              <optgroup label="Brows &amp; Lashes">
-                <option value="brows-threading">Brows (Threading) - R130</option>
-                <option value="brows-lip">Brows + Lip - R220</option>
-                <option value="brows-lip-chin">Brows + Lip + Chin - R305</option>
-                <option value="brow-lamination">Brow Lamination - R495</option>
-                <option value="lash-lift">Lash Lift - R495</option>
-                <option value="lash-lift-tint">Lash Lift + Tint - R565</option>
-              </optgroup>
-              <optgroup label="Waxing">
-                <option value="underarm">Underarm - R120</option>
-                <option value="half-leg">Half Leg - R210</option>
-                <option value="full-leg">Full Leg - R320</option>
-                <option value="bikini-line">Bikini Line - R170</option>
-                <option value="brazilian">Brazilian - R350</option>
-                <option value="hollywood">Hollywood - R380</option>
-              </optgroup>
-              <optgroup label="Skin Treatments">
-                <option value="express-facial">Express Facial - R320</option>
-                <option value="deep-cleansing-facial">Deep Cleansing Facial - R480</option>
-                <option value="brightening-facial">Brightening Facial - R520</option>
-                <option value="hydra-facial">Hydra Facial - R620</option>
-                <option value="facial-led">Facial + LED Therapy - R650</option>
-                <option value="facial-peel">Facial + Peel - R700</option>
-              </optgroup>
-              <optgroup label="Men's Grooming">
-                <option value="classic-haircut">Classic Haircut - R180</option>
-                <option value="skin-fade">Skin Fade - R200</option>
-                <option value="haircut-wash">Haircut &amp; Wash - R220</option>
-                <option value="beard-trim">Beard Trim - R90</option>
-                <option value="back-neck-massage">Back &amp; Neck Massage - R300</option>
-                <option value="full-body-massage">Full Body Massage - R650</option>
-              </optgroup>
-            </select>
-          </div>
-          <div>
-            <label for="location">Preferred store</label>
-            <input type="text" id="location" name="location" placeholder="e.g. V&amp;A Waterfront" autocomplete="organization">
-          </div>
-        </div>
+          <!-- Booking Form -->
+          <form class="booking-form" id="bookingForm" action="checkout.html" method="get">
+            <div class="form-row">
+              <label for="fullName">Full name</label>
+              <input type="text" id="fullName" name="name" placeholder="Alex Dlamini" required>
+            </div>
 
-        <div class="form-row two-col">
-          <div>
-            <label for="preferredDate">Preferred date</label>
-            <input type="date" id="preferredDate" name="date" required>
-          </div>
-          <div>
-            <label for="preferredTime">Preferred time</label>
-            <input type="time" id="preferredTime" name="time" required>
-          </div>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-sm" style="margin-bottom: 0.5rem;">
+              <div class="form-row">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-row">
+                <label for="phone">Mobile number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" required>
+              </div>
+            </div>
 
-        <div class="form-row">
-          <label for="notes">Notes (optional)</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Stylist preference, allergies, or anything we should know."></textarea>
-        </div>
+            <div class="form-row">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="nails-soft-gel">Soft Gel Tips + Gelish - R605</option>
+                <option value="nails-gel-polish">Gel Polish Hands - R350</option>
+                <option value="skin-express">Express Facial - R320</option>
+                <option value="skin-deep">Deep Cleansing Facial - R480</option>
+                <option value="mens-haircut">Classic Haircut - R180</option>
+              </select>
+            </div>
 
-        <div class="form-row">
-          <label for="deposit">Deposit payment (min R200)</label>
-          <div class="currency-field">
-            <span>R</span>
-            <input type="number" id="deposit" name="deposit" min="200" step="50" value="200" required>
-          </div>
-          <p class="field-hint">We only charge the deposit now. Pay the balance in-salon on the day.</p>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-sm" style="margin-bottom: 0.5rem;">
+              <div class="form-row">
+                <label for="preferredDate">Preferred date</label>
+                <input type="date" id="preferredDate" name="date" required>
+              </div>
+              <div class="form-row">
+                <label for="preferredTime">Preferred time</label>
+                <input type="time" id="preferredTime" name="time" required>
+              </div>
+            </div>
 
-        <label class="consent">
-          <input type="checkbox" id="policy" required>
-          I agree to Sorbet's <a href="policy.html">booking &amp; privacy policy</a>.
-        </label>
+            <div class="form-row">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Stylist preference, allergies..."></textarea>
+            </div>
 
-        <div class="form-actions">
-          <button type="submit" class="primary-btn">Pay deposit &amp; confirm</button>
-          <a class="ghost-btn" href="contact.html"><i class="fa-regular fa-comment-dots"></i>Need help?</a>
+            <div class="form-row" style="background: #f8f9fa; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <label for="deposit" style="margin-bottom: 0.25rem;">Deposit payment (min R200)</label>
+              <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 0.5rem;">Pay the balance in-salon on the day.</p>
+              <div style="display: flex; align-items: center;">
+                <span style="padding: 0.75rem; background: var(--color-border); border-radius: var(--radius-sm) 0 0 var(--radius-sm);">R</span>
+                <input type="number" id="deposit" name="deposit" min="200" step="50" value="200" required style="border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+              </div>
+            </div>
+
+            <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
+              <input type="checkbox" id="policy" required style="width: auto;">
+              I agree to Sorbet's <a href="policy.html" style="color: var(--color-primary); text-decoration: underline;">booking & privacy policy</a>.
+            </label>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Pay deposit & confirm</button>
+          </form>
+
         </div>
-      </form>
+      </div>
     </section>
   </main>
 
-  <footer class="sorbet-footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h4>Let's Connect</h4>
-        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
-        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
-        <a class="footer-cta" href="booking.html">Book now</a>
-        <div class="footer-social">
-          <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+          <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="salon.html">Salon</a>
+          <a href="man.html">MAN</a>
+          <a href="products.html">Candis&Co</a>
+        </div>
+        <div class="footer-col">
+          <h4>Your Sorbet</h4>
+          <a href="booking.html">Book Online</a>
+          <a href="contact.html">Store Locator</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">Sorbet Story</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="salon.html">Salon</a>
-        
-        <a href="man.html">MAN</a>
-        <a href="products.html">Candis&amp;Co</a>
-        <a href="products.html">Gift Cards</a>
-        <a href="products.html">Products</a>
-      </div>
-      <div class="footer-col">
-        <h4>Your Sorbet</h4>
-        <a href="booking.html">Book Online</a>
-        <a href="contact.html">Store Locator</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="about.html">Sorbet story</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <div class="footer-logo">Sorbet</div>
-      <div>&copy; Copyright 2026 Sorbet Group. All Rights Reserved</div>
-      <div class="footer-links">
-        <a href="#">T&amp;Cs</a>
-        <a href="#">Refunds &amp; Returns</a>
-        <a href="#">PAIA</a>
-        <a href="policy.html">Privacy Policy</a>
-        <a href="#">Disclaimer</a>
+      <div class="footer-bottom">
+        <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html" style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
     </div>
   </footer>
 
+  <script src="main.js"></script>
   <script>
     (() => {
       const dateInput = document.getElementById("preferredDate");
       if (dateInput) {
         const today = new Date().toISOString().split("T")[0];
         dateInput.min = today;
-      }
-
-      const form = document.getElementById("bookingForm");
-      const depositInput = document.getElementById("deposit");
-
-      if (form) {
-        form.addEventListener("submit", (event) => {
-          if (depositInput && Number(depositInput.value) < 200) {
-            event.preventDefault();
-            depositInput.setCustomValidity("Minimum deposit is R200");
-            depositInput.reportValidity();
-            return;
-          }
-          depositInput?.setCustomValidity("");
-        });
       }
     })();
   </script>

@@ -1,99 +1,150 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Sorbet</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorbet — About Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<header class="about-header">
-   
- <nav class="nav-bar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="salon.html">Salon</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="man.html">Man</a></li>
-          </ul>
-    </nav>   
-</header>
 
-    <div class="about-content">
-      <h2 class="about-title">About Sorbet Cape Town CBD</h2>
-      <p class="sorbet-info">
-        Welcome to Sorbet Cape Town CBD! We are a modern,
-         inclusive beauty and wellness destination for everyone.
-          Our mission is to help you look and feel your best in a friendly,
-           professional environment. Whether you’re here for a haircut, a relaxing facial
-           , or expert grooming, our team is dedicated to providing top-quality service with a personal touch.
-      </p>
-      <p class="sorbet-info">
-        Your premier destination for beauty and wellness services. 
-        Experience luxury and relaxation with every visit.
-      </p>
-   
-      <div class="mission-box">
-        <h3>Our Mission</h3>
-        <p>
-          To deliver exceptional beauty and wellness experiences for all,
-           using the latest techniques and the best products.
-            We believe self-care is for everyone, and we strive to make every guest feel welcome and valued.
-        </p>
-      </div>
-      <div class="vision-box">
-        <h4>Our Vision</h4>
-        <p>
-          To be Cape Town’s most trusted and inclusive beauty brand,
-           known for our vibrant atmosphere, expert care, 
-           and commitment to every client’s unique needs. We want every visit to be a positive, uplifting experience.
-        </p>
-      </div>
-      <div class="values-box">
-        <h4>Our Values</h4>
-        <ul>
-          <li><strong>Inclusivity:</strong> Welcoming all genders, ages, and backgrounds</li>
-          <li><strong>Quality:</strong> Using top products and modern techniques</li>
-          <li><strong>Care:</strong> Personalized attention for every guest</li>
-          <li><strong>Community:</strong> Supporting local wellness and empowerment</li>
-        </ul>
-      </div>
-      <div class="team-box">
-        <h4>Meet Our Team</h4>
-         <img src="images/team-members.jpg" alt="Sorbet Team">
-        <p>Our friendly team includes stylists, therapists, and wellness experts, all passionate about helping you shine. We regularly update our skills and stay on top of the latest trends to serve you better. Come visit us and experience the Sorbet difference!</p>
-      </div>
-     </div>
- 
+  <!-- Mobile Menu Backdrop -->
+  <div class="menu-backdrop" id="menuBackdrop"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
+
+  <!-- Mobile Menu -->
+  <aside class="mobile-menu" id="menuPanel">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="salon.html">Salon</a>
+      <a href="man.html">Man</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="btn btn-primary mt-sm" style="color: white; border-bottom: none;">Book Online</a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Sorbet</a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="about.html" style="color: var(--color-secondary);">About</a>
+        <a href="salon.html">Salon</a>
+        <a href="man.html">Man</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="btn btn-tertiary" style="padding: 0.5rem 1rem;">Book Online</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
   <main>
-    <!-- all your page content here -->
+    <!-- Page Header -->
+    <section class="hero"
+      style="background:url(images/Sorbet-Society-website-banner.webp) center/cover; padding: 6rem 0;">
+      <div class="container hero-content">
+        <h1 style="font-size: 3rem;">About Sorbet</h1>
+        <p style="font-size: 1.25rem;">Your premier destination for beauty and wellness services. Experience luxury and
+          relaxation with every visit.</p>
+      </div>
+    </section>
+
+    <!-- Intro Text -->
+    <section class="section">
+      <div class="container text-center" style="max-width: 800px;">
+        <p class="mb-lg" style="font-size: 1.1rem; color: var(--color-text-light);">
+          Welcome to Sorbet Cape Town CBD! We are a modern, inclusive beauty and wellness destination for everyone. Our
+          mission is to help you look and feel your best in a friendly, professional environment. Whether you’re here
+          for a haircut, a relaxing facial, or expert grooming, our team is dedicated to providing top-quality service
+          with a personal touch.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <!-- Mission -->
+          <div class="card" style="align-items: flex-start; text-align: left;">
+            <h3 style="color: var(--color-primary); font-size: 2rem; margin-top: 0;">Our Mission</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8;">
+              To deliver exceptional beauty and wellness experiences for all, using the latest techniques and the best
+              products. We believe self-care is for everyone, and we strive to make every guest feel welcome and valued.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="card" style="align-items: flex-start; text-align: left;">
+            <h3 style="color: var(--color-primary); font-size: 2rem; margin-top: 0;">Our Vision</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8;">
+              To be Cape Town’s most trusted and inclusive beauty brand, known for our vibrant atmosphere, expert care,
+              and commitment to every client’s unique needs. We want every visit to be a positive, uplifting experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-sm">
+          <!-- Values -->
+          <div class="card"
+            style="align-items: flex-start; text-align: left; background-color: var(--color-primary); color: white;">
+            <h3 style="color: white; font-size: 2rem; margin-top: 0;">Our Values</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 1rem; font-size: 1.05rem; line-height: 1.8;">
+              <li style="margin-bottom: 0.5rem;"><strong>Inclusivity:</strong> Welcoming all genders, ages, and
+                backgrounds</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Quality:</strong> Using top products and modern techniques</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Care:</strong> Personalized attention for every guest</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Community:</strong> Supporting local wellness and empowerment
+              </li>
+            </ul>
+          </div>
+
+          <!-- Team -->
+          <div class="card" style="align-items: flex-start; text-align: left;">
+            <img src="images/team-members.jpg" alt="Sorbet Team"
+              style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+            <h3 style="color: var(--color-primary); font-size: 2rem; margin-top: 0;">Meet Our Team</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8;">
+              Our friendly team includes stylists, therapists, and wellness experts, all passionate about helping you
+              shine. We regularly update our skills and stay on top of the latest trends to serve you better. Come visit
+              us and experience the Sorbet difference!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  
-    <footer class="sorbet-footer">
-      <div class="footer-top">
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
         <div class="footer-col">
           <h4>Let's Connect</h4>
-          <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
-          <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
-          <a class="footer-cta" href="booking.html">Book now</a>
-          <div class="footer-social">
-            <a href="https://instagram.com/sorbetgroup" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/SorbetGroup" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://facebook.com/Sorbetgroup" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
+          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
+            treatments, promotions and tips to get that feeling.</p>
+          <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
           <a href="salon.html">Salon</a>
-          
           <a href="man.html">MAN</a>
           <a href="products.html">Candis&Co</a>
           <a href="products.html">Gift Cards</a>
-          <a href="products.html">Products</a>
         </div>
         <div class="footer-col">
           <h4>Your Sorbet</h4>
@@ -102,22 +153,19 @@
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">Sorbet story</a>
+          <a href="about.html">Sorbet Story</a>
           <a href="contact.html">Contact Us</a>
         </div>
       </div>
-      <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <div class="footer-logo">Sorbet</div>
-        <div>© Copyright 2026 Sorbet Group. All Rights Reserved</div>
-        <div class="footer-links">
-          
-          <a href="policy.html">Privacy Policy</a>
-          <a href="#">Disclaimer</a>
-        </div>
+        <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
+        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
+            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
       </div>
-    </footer>  
+    </div>
+  </footer>
 
   <script src="main.js"></script>
 </body>
+
 </html>
