@@ -1,174 +1,172 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body{
-  height:100%;
-  margin:0;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
-body{
-  background-attachment:fixed;
-  display:flex;
-  flex-direction:column;
+body {
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
-main{
-  flex:1;
+main {
+  flex: 1;
 }
 
-header{
-  position:relative;
-  z-index:1000;
-  width:100%;
-  background:#5AB3D1;
-  padding:10px 0;
+header {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: #fbfafa;
+  padding: 10px 0;
 }
 
-nav{
-  width:100%;
+nav {
+  width: 100%;
 }
 
-.nav-links{
-  position:sticky;
-  top:0;
-  left:0;
-  z-index:8;
-  width:100%;
-  min-height:40px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:30px;
-  padding:10px 20px;
-  background:#5AB3D1;
-  box-shadow:3px 3px 10px rgba(0,0,0,0.2);
-  list-style:none;
+.nav-links {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: 100%;
+  min-height: 40px;
+  display: flex-end;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 10px 20px;
+  background: #fdfeff;
+
+  list-style: none;
 }
 
-.nav-links ul{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:30px;
-  list-style:none;
-  margin:0;
-  padding:0;
+.nav-links ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li{
-  height:50px;
+.nav-links li {
+  height: 50px;
 }
 
-.nav-links li:first-child{
-  margin-right:auto;
+
+.nav-links a {
+  display: block;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
 }
 
-.nav-links a{
-  display:block;
-  padding:10px 30px;
-  text-decoration:none;
-  color:white;
-  font-weight:500;
-  font-size:20px;
+.nav-links a:hover {
+  background: white;
+  color: #5AB3D1;
 }
 
-.nav-links a:hover{
-  background:white;
-  color:#5AB3D1;
+.nav-links a:active {
+  background: #5AB3D1;
+  color: white;
 }
 
-.nav-links a:active{
-  background:#5AB3D1;
-  color:white;
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 100%;
 }
 
-.card{
-  background:white;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  padding:15px;
-  text-align:center;
-  width:100%;
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.card img{
-  width:100%;
-  height:auto;
-  border-radius:8px;
-  object-fit:cover;
+.card h3 {
+  font-size: 1.2rem;
 }
 
-.card h3{
-  font-size:1.2rem;
+.card p {
+  font-size: 0.9rem;
 }
 
-.card p{
-  font-size:0.9rem;
-}
-
-@media (max-width:1024px){
-  .nav-links{
-    flex-wrap:wrap;
-    gap:14px;
-    min-height:auto;
+@media (max-width:1024px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 14px;
+    min-height: auto;
   }
 
-  .nav-links ul{
-    justify-content:center;
-    gap:14px;
+  .nav-links ul {
+    justify-content: center;
+    gap: 14px;
   }
 }
 
-@media (max-width:768px){
-  .nav-links{
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
+@media (max-width:768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
-  .nav-links ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
+  .nav-links ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
 
-  .nav-links li{
-    height:auto;
+  .nav-links li {
+    height: auto;
   }
 
-  .nav-links a{
-    padding:10px 14px;
+  .nav-links a {
+    padding: 10px 14px;
   }
 
-  .cards-container{
-    padding:15px;
-    gap:15px;
+  .cards-container {
+    padding: 15px;
+    gap: 15px;
   }
 
-  .card{
-    padding:12px;
+  .card {
+    padding: 12px;
   }
 }
 
-@media (max-width:480px){
-  .nav-links{
-    gap:10px;
+@media (max-width:480px) {
+  .nav-links {
+    gap: 10px;
   }
 
-  .nav-links a{
-    padding:10px 12px;
-    font-size:14px;
+  .nav-links a {
+    padding: 10px 12px;
+    font-size: 14px;
   }
 
-  .card h3{
-    font-size:1rem;
+  .card h3 {
+    font-size: 1rem;
   }
 
-  .card p{
-    font-size:0.85rem;
+  .card p {
+    font-size: 0.85rem;
   }
 }
 
@@ -176,16 +174,21 @@ nav{
 /* Make header a flex container */
 header {
   display: flex;
-  align-items: center;       /* vertical centering */
-  justify-content: space-between; /* logo left, menu right */
+  align-items: center;
+  /* vertical centering */
+  justify-content: space-between;
+  /* logo left, menu right */
   padding: 10px 20px;
 }
 
 /* Logo on the left */
 .logo-img {
-  width: 120px;  /* adjust as needed */
-  height: auto;  /* maintain aspect ratio */
-  flex-shrink: 0; /* prevent logo from shrinking on small screens */
+  width: 120px;
+  /* adjust as needed */
+  height: auto;
+  /* maintain aspect ratio */
+  flex-shrink: 0;
+  /* prevent logo from shrinking on small screens */
 }
 
 /* Optional: smaller logo on phones */

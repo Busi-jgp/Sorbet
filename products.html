@@ -2,332 +2,1574 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sorbet — Products</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorbet – Products &amp; Specials</title>
+  <meta name="description" content="Shop Sorbet's leading beauty brands and discover current specials and promotions.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="featured.css">
+
   <style>
-    .product-card {
-      background: var(--color-surface);
-      border-radius: var(--radius-md);
+    /* ─── BASE RESET ─────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fafafa;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    /* ─── PREMIUM NAV ────────────────────────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      /* Sync with reference */
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      /* Sophisticated shadow */
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      min-height: 70px;
+    }
+
+    /* Logo */
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-brand-name {
+      font-family: 'Playfair Display', serif;
+      /* Sync with reference */
+      font-size: 28px;
+      font-weight: 700;
+      color: #28252c;
+      letter-spacing: -0.5px;
+    }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #7d40e7;
+    }
+
+    .nav-book-btn {
+      background: #7d40e7 !important;
+      /* Sync with reference */
+      color: #fff !important;
+      border-radius: 25px !important;
+      padding: 10px 24px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 12px rgba(125, 64, 231, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(125, 64, 231, 0.35);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 99px;
+      transition: transform 0.35s, opacity 0.3s;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .pro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pro-card {
+      background: #fff;
+      border-radius: 0 40px 0 0;
+      /* Rounded top-right as per screenshot */
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
       display: flex;
       flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .pro-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pro-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 0 40px 0 0;
+    }
+
+    .pro-banner {
+      background: #333;
+      /* Dark banner */
+      color: #fff;
+      padding: 15px 10px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 80px;
+    }
+
+    .pro-brand {
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .pro-name {
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.9;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+      .pro-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .pro-card img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pro-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+
+    /* ─── HERO HEADER ────────────────────────────── */
+    .product-header {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%),
+        url(images/Products_HEADR.jpg);
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px 40px 60px;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .product-header h1 {
+      font-size: clamp(26px, 5.5vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      line-height: 1.15;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-header p {
+      font-size: clamp(13px, 2.2vw, 19px);
+      max-width: 640px;
+      line-height: 1.7;
+      opacity: 0.92;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    }
+
+    .product-header .header-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(6px);
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+
+    .featured-product {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 52px 44px;
+      margin: 28px;
+      border-radius: 24px;
+      color: #fff;
+      background:
+        linear-gradient(120deg, rgba(80, 10, 80, 0.92) 0%, rgba(150, 50, 120, 0.75) 55%, rgba(240, 110, 110, 0.45) 100%),
+        url(images/product-advertisement.webp);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 14px 40px rgba(80, 10, 80, 0.22);
+    }
+
+    .featured-content {
+      max-width: 520px;
+      flex: 1 1 260px;
+    }
+
+    .badge {
+      background: #00b5c8;
+      padding: 7px 18px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .featured-content h2 {
+      font-size: clamp(17px, 3.5vw, 26px);
+      margin-top: 18px;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    .featured-content h1 {
+      font-size: clamp(20px, 4.5vw, 34px);
+      margin: 8px 0 14px;
+      font-weight: 800;
+    }
+
+    .featured-content p {
+      font-size: clamp(13px, 1.8vw, 15px);
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    /* ─── TOP SELLERS ────────────────────────────── */
+    .top-sellers {
+      padding: 44px 40px 28px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .top-sellers h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .top {
+      color: #ff3b6b;
+    }
+
+    .sell {
+      color: #00a8a8;
+    }
+
+    .top-sellers p {
+      max-width: 850px;
+      line-height: 1.8;
+      color: #666;
+      font-size: clamp(13px, 1.8vw, 15px);
+    }
+
+    /* ─── SECTION DIVIDER ────────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 28px;
+      margin: 10px 0 4px;
+    }
+
+    .section-label span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1a7fa3;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #5AB3D1, transparent);
+    }
+
+    /* ─── PRODUCT GRID ───────────────────────────── */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+      /* Centered fixed-range columns */
+      justify-content: center;
+      /* Center the entire grid */
+      gap: 30px;
+      padding: 40px 20px;
+      background: #fdfdfd;
+    }
+
+    .product-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      /* Center content inside card */
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-7px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
     }
 
-    .product-img {
+    .product-card img {
       width: 100%;
-      height: 260px;
+      height: 210px;
       object-fit: cover;
-      display: block;
+      flex-shrink: 0;
     }
 
     .product-info {
-      padding: 1.5rem;
+      background: #3a3a4a;
+      color: #fff;
       text-align: center;
+      padding: 14px 12px 16px;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      gap: 5px;
     }
 
-    .product-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--color-primary);
+    .product-info h3 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
     }
 
-    .product-desc {
-      font-size: 0.95rem;
-      color: var(--color-text-light);
-      margin-bottom: 1rem;
-      flex-grow: 1;
+    .product-info p {
+      font-size: 12px;
+      opacity: 0.78;
+      line-height: 1.5;
     }
 
     .product-price {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--color-text);
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 99px;
+      padding: 3px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #aef6e8;
+      margin-top: 4px;
+    }
+
+    /* ─── SPECIALS SECTION ───────────────────────── */
+    .specials-section {
+      padding: 50px 28px 60px;
+      background: #fff;
+    }
+
+    .specials-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .specials-header .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a7fa3;
+      margin-bottom: 8px;
+    }
+
+    .specials-header h2 {
+      font-size: clamp(26px, 5vw, 44px);
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+    }
+
+    .specials-header p {
+      font-size: 14px;
+      color: #777;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+      justify-content: center;
+      /* Center the entire grid */
+      gap: 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .special-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+      background: #fff;
+      border: 1px solid #eee;
+      transition: transform 0.28s, box-shadow 0.28s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .special-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26, 127, 163, 0.15);
+    }
+
+    .special-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 210px;
+    }
+
+    .special-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .special-card:hover .special-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .special-ribbon {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: linear-gradient(135deg, #ff3b6b, #ff7043);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      box-shadow: 0 2px 8px rgba(255, 59, 107, 0.35);
+    }
+
+    .special-ribbon.blue {
+      background: linear-gradient(135deg, #1a7fa3, #3ecfb5);
+      box-shadow: 0 2px 8px rgba(26, 127, 163, 0.35);
+    }
+
+    .special-ribbon.gold {
+      background: linear-gradient(135deg, #f5a623, #f77f00);
+      box-shadow: 0 2px 8px rgba(245, 166, 35, 0.35);
+    }
+
+    .special-ribbon.green {
+      background: linear-gradient(135deg, #00a896, #00c9a7);
+      box-shadow: 0 2px 8px rgba(0, 168, 150, 0.35);
+    }
+
+    .special-body {
+      padding: 20px 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .special-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.35;
+    }
+
+    .special-body p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .special-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .special-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1a7fa3;
+    }
+
+    .special-price span {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    .special-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #1a7fa3, #5AB3D1);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .special-cta:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .special-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .special-meta i {
+      font-size: 11px;
+    }
+
+    /* ─── CONTACT ────────────────────────────────── */
+    #contact {
+      padding: 60px 28px;
+      background: linear-gradient(135deg, #f0f9fc 0%, #e8f5e9 100%);
+    }
+
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #1a7fa3;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 99px;
+      padding: 12px 22px;
+      font-size: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+      color: #333;
+    }
+
+    .contact-chip i {
+      color: #1a7fa3;
+      font-size: 15px;
+    }
+
+
+    .sorbet-footer {
+      background: #12122a;
+      color: #bbb;
+      padding: 50px 28px 24px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a,
+    .footer-email {
+      display: block;
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 8px;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #5AB3D1;
+      padding-left: 4px;
+    }
+
+    .footer-col p {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      color: #888;
+    }
+
+    .footer-cta {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #1a7fa3, #5AB3D1);
+      color: #fff !important;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 18px;
+      transition: opacity 0.2s;
+      width: 125px;
+    }
+
+    .footer-cta:hover {
+      opacity: 0.85;
+      padding-left: 24px !important;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #1e1e3a;
+      border-radius: 50%;
+      color: #bbb;
+      font-size: 14px;
+      transition: background 0.2s, color 0.2s;
+      border: 1px solid #2a2a4a;
+    }
+
+    .footer-social a:hover {
+      background: #5AB3D1;
+      color: #fff;
+      border-color: #5AB3D1;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid #1e1e3a;
+      margin: 0 0 22px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #5AB3D1;
+    }
+
+
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .nav-inner {
+        padding: 0 20px;
+      }
+
+      .product-header {
+        padding: 80px 30px 50px;
+        min-height: 350px;
+      }
+
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .featured-product {
+        margin: 20px;
+        padding: 40px 30px;
+      }
+    }
+
+
+    @media (min-width: 1024px) {
+      .product-header {
+        padding: 120px 60px 80px;
+        min-height: 480px;
+      }
+
+      .product-header h1 {
+        font-size: 60px;
+      }
+
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding: 30px 40px;
+      }
+
+      .featured-product {
+        margin: 40px;
+        padding: 60px 50px;
+      }
+    }
+
+
+    @media (max-width: 900px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-inner {
+        padding: 0 18px;
+        min-height: 58px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: #ffffff;
+        padding: 10px 0 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        gap: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        padding: 15px 25px;
+        border-radius: 0;
+        font-size: 16px;
+        color: #333;
+        border-bottom: 1px solid #f5f5f5;
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+        margin: 10px 20px 0;
+        border-radius: 25px;
+        background: #7d40e7;
+        color: #fff;
+        text-align: center;
+      }
+
+      .nav-brand-tagline {
+        display: none;
+      }
+
+      .product-header {
+        padding: 60px 20px 40px;
+        min-height: 300px;
+      }
+
+      .featured-product {
+        flex-direction: column;
+        padding: 28px 22px;
+        margin: 14px;
+      }
+
+      .top-sellers {
+        padding: 30px 20px 20px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .product-card img {
+        height: 170px;
+      }
+
+      .product-info h3 {
+        font-size: 13px;
+      }
+
+      .product-info p {
+        font-size: 11px;
+      }
+
+      .specials-section {
+        padding: 36px 16px 44px;
+      }
+
+      .specials-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
+
+    @media (max-width: 480px) {
+      .nav-brand-name {
+        font-size: 18px;
+      }
+
+      .nav-brand-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+      }
+
+      .product-header {
+        padding: 50px 16px 30px;
+        min-height: 250px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 12px;
+      }
+
+      .product-card img {
+        height: 140px;
+      }
+
+      .product-info {
+        padding: 10px 8px 12px;
+        gap: 3px;
+      }
+
+      .product-info h3 {
+        font-size: 12px;
+      }
+
+      .product-info p {
+        font-size: 10px;
+        display: none;
+      }
+
+
+      .product-price {
+        font-size: 12px;
+        padding: 2px 10px;
+      }
+
+      .specials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .special-img-wrap {
+        height: 180px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
+    @media (max-width: 360px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <ul class="nav-links">
-      <img class="logo-img" src="images/sorbet-logo-m-1.webp" alt="sorbet-logo">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="salon.html">Salon</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="man.html">Man</a></li>
-    </ul>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+
+
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-name">Sorbet</span>
+      </a>
+
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="salon.html">Salon</a></li>
+        <li><a href="man.html">Man</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html" class="nav-book-btn">Book Online</a></li>
+      </ul>
+
+    </div>
   </nav>
 
 
-
-
   <header class="product-header">
-
-    <h1>Leading Brands and Products</h1>
-    <p>Home to 85 professional brands, Sorbet is the largest retailer of Dermalogica, Environ, Be Bright, Heliocare and
-      Motherkind in South Africa.</p>
-
+    <div class="header-pill"><i class="fas fa-star"></i>&nbsp; 85+ Professional Brands</div>
+    <h1>Leading Brands &amp; Products</h1>
+    <p>Sorbet is the largest retailer of Dermalogica, Environ, Be Bright, Heliocare and Motherkind in South Africa — all
+      under one roof.</p>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero"
-      style="background: linear-gradient(rgba(55,19,103,0.7), rgba(55,19,103,0.8)), url('images/Products_HEADR.jpg') center/cover; padding: 6rem 0;">
-      <div class="container hero-content">
-        <h1 style="font-size: 3.5rem;">Leading Brands & Products</h1>
-        <p style="font-size: 1.25rem;">Home to 85 professional brands, Sorbet is the largest retailer of Dermalogica,
-          Environ, Be Bright, Heliocare and Motherkind in South Africa.</p>
+
+
+    <section class="featured-product">
+      <div class="featured-content">
+        <span class="badge"><i class="fas fa-bolt"></i>&nbsp; Featured Product</span>
+        <h2>NEW IN:</h2>
+        <h1>Sorbet Age Affect Range</h1>
+        <p>Targeting more mature skin, Sorbet Age Affect harnesses the power of science and nature to produce an
+          anti-ageing solution that visibly achieves some youthful clout.</p>
       </div>
+      <div class="featured-image"></div>
     </section>
 
-    <!-- Featured Product -->
-    <section class="section" style="background-color: var(--color-surface);">
-      <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-lg">
-          <div>
-            <span
-              style="display: inline-block; background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem;">Featured
-              Product</span>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">NEW IN: <br>Sorbet Age Affect Range</h2>
-            <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
-              Targeting more mature skin, Sorbet Age Affect harnesses the power of science and nature to produce an
-              anti-aging solution that visibly achieves some youthful clout.
-            </p>
-            <button class="btn btn-primary">Shop Now</button>
-          </div>
-          <div>
-            <div
-              style="width: 100%; height: 400px; background-color: var(--color-background); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--color-text-light); border: 2px dashed var(--color-border);">
-              <span>[Featured Image]</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <section class="top-sellers">
+      <h2><span class="top">Top</span> <span class="sell">Sellers</span></h2>
+      <p>Looking for advice? Our Citizens are on hand to help you find the right product for your unique hair, skin or
+        beauty needs. Join Sorbet Society to earn rewards every time you shop your favourite brands.</p>
     </section>
 
 
 
-    <section class="products">
 
 
-      <div class="product-card">
-        <img src="images/hydra-cool.jpg" alt="Hydra Cool Body Lotion">
-        <div class="product-info">
-          <h3>Hydra Cool Body Lotion</h3>
-          <p>Refreshing and hydrating lotion for soft, smooth skin.</p>
-          <li>R349</li>
+    <div class="section-label"><span>Professional Skincare Range</span></div>
+    <section class="pro-grid">
 
+
+      <div class="pro-card">
+        <img src="images/dermalogica.jpg" alt="Dermalogica">
+        <div class="pro-banner">
+          <div class="pro-brand">Dermalogica</div>
+          <div class="pro-name">Pro Collagen Banking Serum</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/rejuvenating-hand-and-body-lotion.jpg" alt="Rejuvenating Hand & Body Lotion">
-        <div class="product-info">
-          <h3>Rejuvenating Hand & Body Lotion</h3>
-          <p>Replenishes moisture and revitalizes tired skin.</p>
-          <li>R299</li>
+      <div class="pro-card">
+        <img src="images/Environ-products.jpg" alt="Environ">
+        <div class="pro-banner">
+          <div class="pro-brand">Environ</div>
+          <div class="pro-name">Original Range</div>
+        </div>
+      </div>
 
+      <div class="pro-card">
+        <img src="images/Age-affect-sorbet.jpg" alt="Sorbet">
+        <div class="pro-banner">
+          <div class="pro-brand">Sorbet</div>
+          <div class="pro-name">Age Affect</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Tint-Heliocare.webp" alt="Heliocare">
+        <div class="pro-banner">
+          <div class="pro-brand">Heliocare</div>
+          <div class="pro-name">Tinted Gel SPF50</div>
         </div>
       </div>
 
 
-
-      <div class="product-card">
-        <img src="images/firming-hand-and-body-lotion.jpg" alt="Firming Hand & Body Lotion">
-        <div class="product-info">
-          <h3>Firming Hand & Body Lotion</h3>
-          <p>Helps improve skin elasticity for a youthful feel.</p>
-          <li>R349</li>
-
+      <div class="pro-card">
+        <img src="images/Exuviance-capsules.jpg" alt="Exuviance">
+        <div class="pro-banner">
+          <div class="pro-brand">Exuviance</div>
+          <div class="pro-name">Vitamin C Serum Capsules</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/fusion-meso-eye-sorbet.jpg" alt="Fusion Meso Eye Sorbet">
-        <div class="product-info">
-          <h3>Fusion Meso Eye Sorbet</h3>
-          <p>Premium eye serum for bright, refreshed under-eyes.</p>
-          <li>R499</li>
-
+      <div class="pro-card">
+        <img src="images/moroccanoil.jpg" alt="Moroccan Oil">
+        <div class="pro-banner">
+          <div class="pro-brand">Moroccan Oil</div>
+          <div class="pro-name">Treatment Oil</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/strawberry-sorbet-body-scrub.jpg" alt="Strawberry Sherbet Body Scrub">
-        <div class="product-info">
-          <h3>Strawberry Sherbet Body Scrub</h3>
-          <p>Sweet strawberry scrub to exfoliate and smooth skin.</p>
-          <li>R249</li>
-
+      <div class="pro-card">
+        <img src="images/morgan-taylor.jpg" alt="Morgan Taylor">
+        <div class="pro-banner">
+          <div class="pro-brand">Morgan Taylor</div>
+          <div class="pro-name">Sparkle Nail Polish</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/apricot-sorbet-body-scrub.jpg" alt="Apricot Sherbet Body Scrub">
-        <div class="product-info">
-          <h3>Apricot Sherbet Body Scrub</h3>
-          <p>Gentle apricot scrub that leaves skin soft and glowing.</p>
-          <li>R299</li>
-          <button class="add-cart-btn">Add to Cart</button>
+      <div class="pro-card">
+        <img src="images/bio-sculpture.jpg" alt="BIO SCULPTURE">
+        <div class="pro-banner">
+          <div class="pro-brand">BIO SCULPTURE</div>
+          <div class="pro-name">Ethos Lavender Base</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/coconut-body-butter.jpg" alt="Coconut Body Butter">
-        <div class="product-info">
-          <h3>Coconut Body Butter</h3>
-          <p>Rich body butter for deep nourishment and silky skin.</p>
-          <li>R399</li>
 
+      <div class="pro-card">
+        <img src="images/Nioxin.jpg" alt="Nioxin">
+        <div class="pro-banner">
+          <div class="pro-brand">Nioxin</div>
+          <div class="pro-name">System Kit 2 Shampoo & Conditioner</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/lavender-hand-cream.jpg" alt="Lavender Hand Cream">
-        <div class="product-info">
-          <h3>Lavender Hand Cream</h3>
-          <p>Calming lavender hand cream for soft, moisturized hands.</p>
-          <li>R199</li>
-
+      <div class="pro-card">
+        <img src="images/Redken-range.jpg" alt="Redken">
+        <div class="pro-banner">
+          <div class="pro-brand">Redken</div>
+          <div class="pro-name">All Soft Shampoo & Conditioner</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/vanilla-sum-sum.jpg " alt="Vanilla Body Mist">
-        <div class="product-info">
-          <p>Light fragrance mist to refresh your body anytime.</p>
-          <li>R149</li>
-
+      <div class="pro-card">
+        <img src="images/Biosense-3.jpg" alt="BIOSENSE">
+        <div class="pro-banner">
+          <div class="pro-brand">BIOSENSE</div>
+          <div class="pro-name">12-in-1 Treatment</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/aloe-vera.jpg" alt="Aloe Vera Gel">
-        <div class="product-info">
-          <h3>Aloe Vera Gel</h3>
-          <p>Soothing gel for calm, hydrated skin after sun or treatments.</p>
-          <li>R179</li>
-
+      <div class="pro-card">
+        <img src="images/kevin-murphy-1536x1510.webp" alt="Kevin Murphy">
+        <div class="pro-banner">
+          <div class="pro-brand">Kevin Murphy</div>
+          <div class="pro-name">Hydrate Me Wash</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/vitamin-c.jpg" alt="Vitamin C Serum">
-        <div class="product-info">
-          <h3>Vitamin C Serum</h3>
-          <p>Brightening serum to reduce dark spots and even skin tone.</p>
-          <li>R399</li>
 
+      <div class="pro-card">
+        <img src="images/OPI-nail-polish.jpg" alt="OPI">
+        <div class="pro-banner">
+          <div class="pro-brand">OPI</div>
+          <div class="pro-name">Nail Polish</div>
         </div>
       </div>
 
-      <div class="product-card">
-        <img src="images/rose-body-lotion.jpg" alt="Rose Body Lotion">
-        <div class="product-info">
-          <h3>Rose Body Lotion</h3>
-          <p>Light rose-scented lotion for soft, fragrant skin.</p>
-          <li>R279</li>
-
+      <div class="pro-card">
+        <img src="images/Maverick-dry-range.jpg" alt="MVRCK">
+        <div class="pro-banner">
+          <div class="pro-brand">MVRCK</div>
+          <div class="pro-name">Dry Paste</div>
         </div>
       </div>
+
+      <div class="pro-card">
+        <img src="images/Mankind.jpg" alt="Motherkind">
+        <div class="pro-banner">
+          <div class="pro-brand">Motherkind</div>
+          <div class="pro-name">Collagen</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/BeBright-illuminate-sorbet.jpg" alt="Be Bright">
+        <div class="pro-banner">
+          <div class="pro-brand">Be Bright</div>
+          <div class="pro-name">L-Glutathione</div>
+        </div>
+      </div>
+
+
+      <div class="pro-card">
+        <img src="images/Skoon-Sorbet-range-768x768.webp" alt="Skoon">
+        <div class="pro-banner">
+          <div class="pro-brand">Skoon</div>
+          <div class="pro-name">The One Hydro Plump Face Cream</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Lelive-conditioner-2048x2048.jpg" alt="Lelive">
+        <div class="pro-banner">
+          <div class="pro-brand">Lelive</div>
+          <div class="pro-name">All The Shade Tinted Moisturizer</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Herbal-pigment-dmskskin.jpg" alt="DMK">
+        <div class="pro-banner">
+          <div class="pro-brand">DMK</div>
+          <div class="pro-name">Herbal Pigment Skin Refining Oil</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Trichotin-hair-regenisis.webp" alt="Trichotin">
+        <div class="pro-banner">
+          <div class="pro-brand">Trichotin</div>
+          <div class="pro-name">Hair Regenesis Hair Supplement</div>
+        </div>
+      </div>
+
+
+      <div class="pro-card">
+        <img src="images/Design-essentials-coconut-monoi.jpg" alt="Design Essentials">
+        <div class="pro-banner">
+          <div class="pro-brand">Design Essentials</div>
+          <div class="pro-name">Pre collagen banking serum</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Exfoliating-cream.webp" alt="Milk Solutions">
+        <div class="pro-banner">
+          <div class="pro-brand">Milk Solutions</div>
+          <div class="pro-name">Milk & Honey Heel Balm</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Hairy-Eye-sorbet.jpg" alt="Hairy Eye">
+        <div class="pro-banner">
+          <div class="pro-brand">Hairy Eye</div>
+          <div class="pro-name">Beard Oil & Beard Balm</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Blue-beards-768x768.webp" alt="Bluebeards Revenge">
+        <div class="pro-banner">
+          <div class="pro-brand">Bluebeards Revenge</div>
+          <div class="pro-name">Post Shave Balm</div>
+        </div>
+      </div>
+
+
+      <div class="pro-card">
+        <img src="images/REF-frizz-tamer.jpg" alt="REF">
+        <div class="pro-banner">
+          <div class="pro-brand">REF</div>
+          <div class="pro-name">Fiber Turner</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/VitaminMe-digestion.webp" alt="Vitamin me">
+        <div class="pro-banner">
+          <div class="pro-brand">Vitamin me</div>
+          <div class="pro-name">Debloating & Digestion</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/Olaplex-Shampoo.jpg" alt="Olaplex">
+        <div class="pro-banner">
+          <div class="pro-brand">Olaplex</div>
+          <div class="pro-name">No. 4 Bond Maintenance Shampoo</div>
+        </div>
+      </div>
+
+      <div class="pro-card">
+        <img src="images/GHD-768x770.webp" alt="GHD">
+        <div class="pro-banner">
+          <div class="pro-brand">GHD</div>
+          <div class="pro-name">Bodyguard Heat Protect Spray</div>
+        </div>
+      </div>
+
+
+      <div class="pro-card">
+        <img src="images/Paul-mitchell-sorbet.jpg" alt="Paul Mitchell">
+        <div class="pro-banner">
+          <div class="pro-brand">Paul Mitchell</div>
+          <div class="pro-name">Tea Tree Shaping Cream</div>
+        </div>
+      </div>
+
     </section>
 
-    <section class="products">
-      <div class="product-card">
-        <img src="images/Environ-products.jpg" alt="Exuviance">
-        <div class="product-info">
-          <h3>Exuviance</h3>
-          <p>Vitamin C Serum Capsules</p>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img class="product-img" src="images/rose-body-lotion.jpg" alt="Rose Body Lotion">
-        <div class="product-info">
-          <h3 class="product-title">Rose Body Lotion</h3>
-          <p class="product-desc">A delicate floral scent with fast-absorbing hydration.</p>
-          <div class="product-price">R250</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img class="product-img" src="images/vanilla-sum-sum.jpg" alt="Vanilla Sugar Body Polish">
-        <div class="product-info">
-          <h3 class="product-title">Vanilla Sugar Body Polish</h3>
-          <p class="product-desc">Sloughs away dead cells, leaving a sweet vanilla scent.</p>
-          <div class="product-price">R280</div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img class="product-img" src="images/vitamin-c.jpg" alt="Vitamin C Brightening Serum">
-        <div class="product-info">
-          <h3 class="product-title">Vitamin C Brightening Serum</h3>
-          <p class="product-desc">Boosts radiance and targets uneven skin tone.</p>
-          <div class="product-price">R550</div>
-        </div>
-      </div>
-      </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Let's Connect</h4>
-          <a href="mailto:info@sorbet.co.za" style="font-weight: bold; color: white;">info@sorbet.co.za</a>
-          <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
-            treatments, promotions and tips to get that feeling.</p>
-          <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+  <section class="specials-section">
+    <div class="specials-header">
+      <p class="eyebrow"><i class="fas fa-tag"></i>&nbsp; Limited Time Offers</p>
+      <h2>Sorbet Specials</h2>
+      <p>Treat yourself (or a loved one) to our latest promotions and seasonal offers — crafted to make you feel amazing
+        for less.</p>
+    </div>
+
+    <div class="specials-grid">
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/picture-2.webp" alt="VIP Girls Night Special" loading="lazy">
+          <span class="special-ribbon">Galentine's</span>
+        </div>
+        <div class="special-body">
+          <h3>VIP Cinema &amp; Pampering Night 🎬</h3>
+          <p>For Galentine's we're giving away a VIP cinema experience. Visit any Sorbet salon and spend R350+ to enter
+            the lucky draw.</p>
+          <div class="special-footer">
+            <div class="special-price">Free entry <span>R0</span></div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-clock"></i> Limited time</span>
+            <span><i class="fas fa-heart"></i> 31 loves</span>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <a href="salon.html">Salon</a>
-          <a href="man.html">MAN</a>
-          <a href="products.html">Candis&Co</a>
+      </div>
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/picture-4.webp" alt="Mani Pedi Special" loading="lazy">
+          <span class="special-ribbon blue">Fan Fave</span>
         </div>
-        <div class="footer-col">
-          <h4>Your Sorbet</h4>
-          <a href="booking.html">Book Online</a>
-          <a href="contact.html">Store Locator</a>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html">Sorbet Story</a>
-          <a href="contact.html">Contact Us</a>
+        <div class="special-body">
+          <h3>Mani &amp; Pedi Combo 💅</h3>
+          <p>We're in love with soft feet and fresh polish. Get a full manicure and pedicure together at a bundle price
+            — save R80.</p>
+          <div class="special-footer">
+            <div class="special-price">R349 <span>R429</span></div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-clock"></i> While slots last</span>
+            <span><i class="fas fa-heart"></i> 31 loves</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="logo" style="color: white; margin-bottom: 1rem;">Sorbet</p>
-        <p>© Copyright 2026 Sorbet Group. All Rights Reserved. <a href="policy.html"
-            style="text-decoration: underline; margin-left: 1rem;">Privacy Policy</a></p>
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/picture-3.webp" alt="Skin Treatment Special" loading="lazy">
+          <span class="special-ribbon gold">20% Off</span>
+        </div>
+        <div class="special-body">
+          <h3>Dermalogica Signature Facial ✨</h3>
+          <p>Enjoy 20% off our Dermalogica Signature Facial this month. Tailored to your skin type for a radiant,
+            healthy glow.</p>
+          <div class="special-footer">
+            <div class="special-price">R399 <span>R499</span></div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-clock"></i> March only</span>
+            <span><i class="fas fa-star"></i> Top rated</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/sorbet-skin-temp1.webp" alt="Skin Care Bundle" loading="lazy">
+          <span class="special-ribbon green">Bundle Deal</span>
+        </div>
+        <div class="special-body">
+          <h3>Sorbet Skin Bundle 🌿</h3>
+          <p>Buy any 2 Sorbet skincare products and get a FREE travel-size Aloe Vera Gel — the perfect addition to your
+            daily routine.</p>
+          <div class="special-footer">
+            <div class="special-price">From R399</div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-gift"></i> Free gift</span>
+            <span><i class="fas fa-clock"></i> Limited stock</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/sorbet-nails-temp2b.webp" alt="Nails Special" loading="lazy">
+          <span class="special-ribbon">New Season</span>
+        </div>
+        <div class="special-body">
+          <h3>Autumn Nails Collection 🍂</h3>
+          <p>Refresh your look with our new autumn nail palette. Choose from 30+ seasonal shades with a Bio Sculpture
+            overlay application.</p>
+          <div class="special-footer">
+            <div class="special-price">From R249</div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-palette"></i> 30+ shades</span>
+            <span><i class="fas fa-clock"></i> March 2026</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="special-card">
+        <div class="special-img-wrap">
+          <img src="images/Sorbet-Society-website-banner.webp" alt="Sorbet Society Loyalty" loading="lazy">
+          <span class="special-ribbon blue">Members Only</span>
+        </div>
+        <div class="special-body">
+          <h3>Sorbet Society Birthday Treat 🎂</h3>
+          <p>Sorbet Society members enjoy a FREE birthday treatment every year. Sign up today and unlock exclusive
+            discounts, rewards and more.</p>
+          <div class="special-footer">
+            <div class="special-price">FREE</div>
+
+          </div>
+          <div class="special-meta">
+            <span><i class="fas fa-users"></i> Members only</span>
+            <span><i class="fas fa-gift"></i> Birthday perk</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-chip"><i class="fas fa-map-marker-alt"></i> 123 Spa Street CBD, Cape Town</div>
+      <div class="contact-chip"><i class="fas fa-phone"></i> +27 10 020 3443</div>
+      <div class="contact-chip"><i class="fas fa-envelope"></i> sibusisiwe.420@icloud.com</div>
+    </div>
+  </section>
+
+
+  <footer class="sorbet-footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Let's Connect</h4>
+        <a class="footer-email" href="mailto:info@sorbet.co.za">info@sorbet.co.za</a>
+        <p>Be the first to hear about new treatments, promotions and tips to get that feeling.</p>
+        <a class="footer-cta" href="booking.html">Book Now</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/sorbetgroup" target="_blank" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://x.com/SorbetGroup" target="_blank" aria-label="X Twitter"><i
+              class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/Sorbetgroup" target="_blank" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/sorbet-group/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="salon.html">Salon</a>
+        <a href="man.html">MAN</a>
+        <a href="products.html">Candis &amp; Co</a>
+        <a href="products.html">Gift Cards</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col">
+        <h4>Your Sorbet</h4>
+        <a href="booking.html">Book Online</a>
+        <a href="contact.html">Store Locator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">Sorbet Story</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <div class="footer-logo">SORBET</div>
+      <div>&copy; 2026 Sorbet Group. All Rights Reserved.</div>
+      <div class="footer-links">
+        <a href="#">T&amp;Cs</a>
+        <a href="#">PAIA</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
       </div>
     </div>
   </footer>
 
+
   <script src="main.js"></script>
+  <script>
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
 </body>
 
 </html>
