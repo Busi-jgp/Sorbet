@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="featured.css">
 
   <style>
-    /* ─── BASE RESET ─────────────────────────────── */
     *,
     *::before,
     *::after {
@@ -48,6 +47,7 @@
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
       /* Sophisticated shadow */
       border-bottom: 1px solid #f0f0f0;
+      position: fixed;
     }
 
     .nav-inner {
@@ -124,7 +124,7 @@
       display: block;
       width: 24px;
       height: 2.5px;
-      background: #fff;
+      background: #6c6767;
       border-radius: 99px;
       transition: transform 0.35s, opacity 0.3s;
       transform-origin: center;
@@ -232,6 +232,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      z-index: 1;
     }
 
     .product-header h1 {
