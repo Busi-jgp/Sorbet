@@ -1,464 +1,464 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.treatment-header{
-  min-height:500px;
-  border-radius:10px;
-  background-image:url(images/Sorbet-Society-website-banner.webp);
-  background-size:cover;
+.treatment-header {
+  min-height: 500px;
+  border-radius: 10px;
+  background-image: url(images/Sorbet-Society-website-banner.webp);
+  background-size: cover;
 }
 
-body{
-  background:#f4f4f4;
-  justify-content:center;
-  padding:0;
-  overflow-x:hidden;
+body {
+  background: #f4f4f4;
+  justify-content: center;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.page{
-  max-width:950px;
-  width:100%;
-  margin:0 auto;
+.page {
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.menu-container{
-  width:100%;
-  max-width:950px;
-  margin:0 auto;
-  background:#e66a8a;
+.menu-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  background: #e66a8a;
 }
 
-.menu-tabs{
-  display:flex;
-  margin-bottom:10px;
+.menu-tabs {
+  display: flex;
+  margin-bottom: 10px;
 }
 
-.tab{
-  flex:1;
-  padding:14px;
-  border:none;
-  background:#3bb9b0;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
+.tab {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: #3bb9b0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.tab.active{
-  background:#e66a8a;
+.tab.active {
+  background: #e66a8a;
 }
 
-.menu-card{
-  width:100%;
-  padding:30px;
-  border-radius:6px;
-  color:white;
-  background:#e66a8a;
-  box-sizing:border-box;
+.menu-card {
+  width: 100%;
+  padding: 30px;
+  border-radius: 6px;
+  color: white;
+  background: #e66a8a;
+  box-sizing: border-box;
 }
 
-.menu-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.menu-header img{
-  width:100%;
-  max-width:620px;
-  height:auto;
-  display:block;
+.menu-header img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  display: block;
 }
 
-.menu-title{
-  font-size:42px;
-  text-transform:lowercase;
+.menu-title {
+  font-size: 42px;
+  text-transform: lowercase;
 }
 
-.menu-image{
-  width:120px;
-  border-radius:6px;
+.menu-image {
+  width: 120px;
+  border-radius: 6px;
 }
 
-.menu-section{
-  margin-top:20px;
+.menu-section {
+  margin-top: 20px;
 }
 
-.menu-section h2{
-  font-size:18px;
-  margin-bottom:10px;
+.menu-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.menu-item{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid rgba(255,255,255,0.6);
-  padding:7px 0;
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 7px 0;
 }
 
-.menu-item span:last-child{
-  font-weight:bold;
+.menu-item span:last-child {
+  font-weight: bold;
 }
 
-.men-menu{
-  background:#000;
-  color:white;
-  border:1px solid #333;
+.men-menu {
+  background: #000;
+  color: white;
+  border: 1px solid #333;
 }
 
-.men-menu.black{
-  background:#211f1f;
-  color:white;
+.men-menu.black {
+  background: #211f1f;
+  color: white;
 }
 
-.men-menu h2{
-  border-bottom:1px solid #444;
-  padding-bottom:6px;
-  margin-bottom:10px;
+.men-menu h2 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
 }
 
-.men-menu .menu-item{
-  border-bottom:1px solid #333;
+.men-menu .menu-item {
+  border-bottom: 1px solid #333;
 }
 
-.men-menu .menu-item span:last-child{
-  color:#ccc;
-  font-weight:bold;
+.men-menu .menu-item span:last-child {
+  color: #ccc;
+  font-weight: bold;
 }
 
-.hero{
-  height:500px;
-  position:relative;
-  color:white;
-  margin-bottom:60px;
-  border-radius:12px;
-  background-image:url(images/Sorbet-Hair-Cover.jpg);
-  background-size:cover;
-  background-position:center;
+.hero {
+  height: 500px;
+  position: relative;
+  color: white;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  background-image: url(images/Sorbet-Hair-Cover.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.4);
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  position:relative;
-  z-index:2;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 2;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:bold;
-  letter-spacing:2px;
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.nav-links{
-  display:flex;
-  list-style:none;
-  gap:25px;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
 }
 
-.nav-links a{
-  text-decoration:none;
-  color:white;
-  font-size:16px;
-  font-weight:500;
-  transition:0.3s;
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.nav-links a:hover{
-  color:#ff7aa8;
+.nav-links a:hover {
+  color: #ff7aa8;
 }
 
-.hero-text{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
-  z-index:2;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
 }
 
-.hero-text h1{
-  font-size:48px;
-  margin-bottom:10px;
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
-.hero-text p{
-  font-size:18px;
+.hero-text p {
+  font-size: 18px;
 }
 
-.site-footer{
-  background:var(--text-dark);
-  color:var(--bg-white);
-  text-align:center;
-  padding:30px;
-  margin-top:40px;
+.site-footer {
+  background: var(--text-dark);
+  color: var(--bg-white);
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
 }
 
-.site-footer p{
-  margin:0;
-  font-size:14px;
+.site-footer p {
+  margin: 0;
+  font-size: 14px;
 }
 
-footer{
-  background:grey;
-  color:white;
-  text-align:center;
-  padding:20px 0;
-  margin-top:50px;
+footer {
+  background: grey;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
 }
 
-footer a{
-  color:white;
-  margin:0 10px;
-  font-size:1.2rem;
-  text-decoration:none;
+footer a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
-footer a:hover{
-  color:var(--accent-yellow);
+footer a:hover {
+  color: var(--accent-yellow);
 }
 
-.sorbet-footer{
-  width:100%;
-  background:#4a4a4a;
-  color:#f3f3f3;
-  padding:60px 30px 30px;
-  margin:60px 0 0 0;
-  text-align:left;
+.sorbet-footer {
+  width: 100%;
+  background: #4a4a4a;
+  color: #f3f3f3;
+  padding: 60px 30px 30px;
+  margin: 60px 0 0 0;
+  text-align: left;
 }
 
-.sorbet-footer a{
-  color:#f3f3f3;
-  text-decoration:none;
+.sorbet-footer a {
+  color: #f3f3f3;
+  text-decoration: none;
 }
 
-.sorbet-footer a:hover{
-  color:var(--sorbet-teal);
+.sorbet-footer a:hover {
+  color: var(--sorbet-teal);
 }
 
-.sorbet-footer .footer-top{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0, 1fr));
-  gap:30px;
+.sorbet-footer .footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
 }
 
-.sorbet-footer h4{
-  font-family:"Playfair Display", serif;
-  font-size:20px;
-  margin-bottom:16px;
-  color:#ffffff;
+.sorbet-footer h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #ffffff;
 }
 
-.sorbet-footer .footer-col{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  font-size:15px;
+.sorbet-footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
 }
 
-.sorbet-footer .footer-email{
-  font-weight:600;
-  font-size:16px;
+.sorbet-footer .footer-email {
+  font-weight: 600;
+  font-size: 16px;
 }
 
-.sorbet-footer .footer-cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--sorbet-teal);
-  color:white;
-  padding:10px 18px;
-  border-radius:999px;
-  font-weight:600;
-  width:fit-content;
+.sorbet-footer .footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sorbet-teal);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  width: fit-content;
 }
 
-.sorbet-footer .footer-social{
-  display:flex;
-  gap:14px;
-  margin-top:6px;
-  font-size:18px;
+.sorbet-footer .footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+  font-size: 18px;
 }
 
-.sorbet-footer .footer-divider{
-  max-width:1200px;
-  margin:30px auto;
-  height:1px;
-  background:rgba(255,255,255,0.15);
+.sorbet-footer .footer-divider {
+  max-width: 1200px;
+  margin: 30px auto;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.sorbet-footer .footer-bottom{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:12px 24px;
-  font-size:14px;
-  color:#dcdcdc;
+.sorbet-footer .footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  font-size: 14px;
+  color: #dcdcdc;
 }
 
-.sorbet-footer .footer-logo{
-  font-family:"Playfair Display", serif;
-  font-size:26px;
-  letter-spacing:1px;
-  color:#fefefe;
+.sorbet-footer .footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #fefefe;
 }
 
-.sorbet-footer .footer-links{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+.sorbet-footer .footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 /* Mobile optimizations */
-@media (max-width:1024px){
-  .sorbet-footer .footer-top{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
+@media (max-width:1024px) {
+  .sorbet-footer .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-mix .hero-shell{
-    grid-template-columns:1fr;
-    text-align:center;
+  .hero-mix .hero-shell {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .hero-mix .hero-actions,
-  .hero-mix .hero-highlights{
-    justify-content:center;
+  .hero-mix .hero-highlights {
+    justify-content: center;
   }
 
-  .hero-mix .hero-visual{
-    order:-1;
-  }
-}
-
-@media (max-width:768px){
-  .page{
-    padding:0 12px;
-  }
-
-  .hero{
-    height:320px;
-    margin-bottom:30px;
-    border-radius:10px;
-  }
-
-  .hero-text h1{
-    font-size:32px;
-  }
-
-  .hero-text p{
-    font-size:16px;
-  }
-
-  .navbar{
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .menu-tabs{
-    flex-wrap:wrap;
-    gap:8px;
-  }
-
-  .tab{
-    flex:1 1 48%;
-    padding:12px;
-    font-size:14px;
-  }
-
-  .menu-card{
-    padding:20px;
-  }
-
-  .menu-header{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .menu-header img{
-    width:100%;
-    max-width:100%;
-  }
-
-  .sorbet-footer{
-    padding:40px 16px 24px;
-  }
-
-  .sorbet-footer .footer-top{
-    gap:20px;
+  .hero-mix .hero-visual {
+    order: -1;
   }
 }
 
-@media (max-width:640px){
-  .hero-mix .hero-shell{
-    padding:60px 20px;
+@media (max-width:768px) {
+  .page {
+    padding: 0 12px;
   }
 
-  .hero-mix h2{
-    font-size:38px;
+  .hero {
+    height: 320px;
+    margin-bottom: 30px;
+    border-radius: 10px;
   }
 
-  .sorbet-footer .footer-top{
-    grid-template-columns:1fr;
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tab {
+    flex: 1 1 48%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .menu-card {
+    padding: 20px;
+  }
+
+  .menu-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu-header img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sorbet-footer {
+    padding: 40px 16px 24px;
+  }
+
+  .sorbet-footer .footer-top {
+    gap: 20px;
   }
 }
 
-@media (max-width:480px){
-  .tab{
-    flex:1 1 100%;
-    font-size:13px;
+@media (max-width:640px) {
+  .hero-mix .hero-shell {
+    padding: 60px 20px;
   }
 
-  .menu-card{
-    padding:18px;
+  .hero-mix h2 {
+    font-size: 38px;
   }
 
-  .menu-header img{
-    max-width:100%;
-  }
-
-  .hero{
-    height:260px;
-  }
-
-  .hero-text h1{
-    font-size:28px;
-  }
-
-  .sorbet-footer{
-    padding:32px 14px 20px;
-    margin-top:40px;
+  .sorbet-footer .footer-top {
+    grid-template-columns: 1fr;
   }
 }
 
-.card h3{
-  font-size:1.2rem;
+@media (max-width:480px) {
+  .tab {
+    flex: 1 1 100%;
+    font-size: 13px;
+  }
+
+  .menu-card {
+    padding: 18px;
+  }
+
+  .menu-header img {
+    max-width: 100%;
+  }
+
+  .hero {
+    height: 260px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .sorbet-footer {
+    padding: 32px 14px 20px;
+    margin-top: 40px;
+  }
 }
 
-.card p{
-  font-size:0.9rem;
+.card h3 {
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
 }
