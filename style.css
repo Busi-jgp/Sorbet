@@ -723,6 +723,26 @@ button {
   }
 }
 
+/* Video Container Utilities */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Tablet breakpoint extras (768px-1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
@@ -744,4 +764,111 @@ button {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+}
+
+/* Section */
+
+.citizen-section {
+  background: #f3f0f0;
+  padding: 80px 20px;
+}
+
+/* Container */
+
+.citizen-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Image */
+
+.citizen-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Content */
+
+.citizen-content {
+  max-width: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Color bars */
+
+.color-line {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.color-line span {
+  height: 12px;
+  border-radius: 20px;
+}
+
+.pink {
+  width: 60px;
+  background: #e43c7c;
+}
+
+.teal {
+  width: 60px;
+  background: #1ca7a6;
+  margin-left: 10px;
+}
+
+/* Text */
+
+.citizen-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Button */
+
+.book-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #e43c7c;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* -------------------- */
+/* MOBILE RESPONSIVE */
+/* -------------------- */
+
+@media (max-width:768px) {
+
+  .citizen-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .citizen-image img {
+    max-width: 100%;
+  }
+
+  .citizen-content {
+    max-width: 100%;
+  }
+
+  .citizen-content p {
+    font-size: 16px;
+  }
+
+  .book-btn {
+    padding: 12px 26px;
+  }
+
 }
