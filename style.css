@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@300;400;600;700&display=swap');
 
 :root {
-  /* Colors */
+  
   --color-primary: #832eeb;
-  /* Vibrant Purple (DUBE inspiration) */
+ 
   --color-secondary: #1ba6a6;
-  /* Sorbet Teal */
+  
   --color-accent: #0a85aa;
-  /* Sorbet Blue */
+ 
   --color-background: #faf9f8;
-  /* Off white */
+  
   --color-surface: #ffffff;
   --color-text: #222125;
   --color-text-light: #5a5a5a;
   --color-border: #e8e5f0;
 
-  /* Typography */
+
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Manrope', sans-serif;
 
-  /* Spacing */
+  
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 6rem;
 
-  /* Other */
+  
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -36,7 +36,7 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Base Resets */
+
 *,
 *::before,
 *::after {
@@ -63,7 +63,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  color: whitesmoke;
+  color: #3e3d3d;
   line-height: 1.2;
 }
 
@@ -87,7 +87,7 @@ button {
   transition: var(--transition);
 }
 
-/* Layout Classes */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -104,7 +104,7 @@ button {
   gap: var(--spacing-md);
 }
 
-/* Responsive Grid Columns (Mobile First) */
+
 .grid-cols-1 {
   grid-template-columns: 1fr;
 }
@@ -151,7 +151,7 @@ button {
   gap: var(--spacing-md);
 }
 
-/* Buttons */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -199,7 +199,7 @@ button {
   background-color: white;
 }
 
-/* Header & Navigation */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -224,7 +224,7 @@ button {
   letter-spacing: -0.5px;
 }
 
-/* Desktop Nav */
+
 .nav-links {
   display: none;
 }
@@ -250,13 +250,13 @@ button {
   }
 }
 
-/* Mobile Nav Toggle */
+
 .menu-toggle {
   font-size: 1.5rem;
   color: var(--color-primary);
 }
 
-/* Mobile Menu Panel */
+
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -295,7 +295,7 @@ button {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Hero Section */
+
 .hero {
   position: relative;
   background-color: var(--color-primary);
@@ -332,7 +332,7 @@ button {
   opacity: 0.9;
 }
 
-/* Cards */
+
 .card {
   background: var(--color-surface);
   border-radius: var(--radius-md);
@@ -353,8 +353,8 @@ button {
 
 .card-icon-wrapper {
   background: var(--color-background);
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -379,7 +379,7 @@ button {
   font-size: 0.95rem;
 }
 
-/* Footer */
+
 .site-footer {
   background: #11091b;
   color: #fff;
@@ -423,7 +423,7 @@ button {
   font-size: 0.875rem;
 }
 
-/* Utilities */
+
 .text-center {
   text-align: center;
 }
@@ -436,7 +436,7 @@ button {
   margin-top: var(--spacing-sm);
 }
 
-/* Responsive Large Grid (lg) */
+
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -447,30 +447,27 @@ button {
   }
 }
 
-/* ============================================================
-   MOBILE-FIRST RESPONSIVE OVERRIDES
-   All tweaks for phones (max-width: 767px)
-   ============================================================ */
+
 @media (max-width: 767px) {
 
-  /* --- Typography --- */
+
   h1,
   h2,
   h3 {
     word-break: break-word;
   }
 
-  /* --- Container --- */
+
   .container {
     padding: 0 1rem;
   }
 
-  /* --- Section padding --- */
+
   .section {
     padding: var(--spacing-md) 0;
   }
 
-  /* --- Hero Section --- */
+
   .hero {
     padding: 4rem 0 !important;
   }
@@ -487,12 +484,12 @@ button {
     padding: 0 1rem;
   }
 
-  /* --- Navbar / Header --- */
+  
   .logo {
     font-size: 1.4rem;
   }
 
-  /* --- Grids: collapse to single column --- */
+  
   .grid-cols-1,
   .grid[class*="md:grid-cols"],
   [class*="md:grid-cols"],
@@ -500,12 +497,12 @@ button {
     grid-template-columns: 1fr !important;
   }
 
-  /* Keep checkout 2-col grid (card expiry / cvv) */
+  
   .grid-cols-2 {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* --- Cards --- */
+
   .card {
     padding: 1.25rem;
   }
@@ -518,34 +515,34 @@ button {
     font-size: 0.9rem;
   }
 
-  /* --- Card icon wrapper --- */
+
   .card-icon-wrapper {
-    width: 64px;
-    height: 64px;
+    width: 200px;
+    height: 200px;
   }
 
-  /* --- Buttons --- */
+
   .btn {
     padding: 0.7rem 1.25rem;
     font-size: 0.95rem;
     width: auto;
     min-height: 44px;
-    /* touch-friendly */
+
   }
 
-  /* Hero button row: stack on very small screens */
+
   .flex.justify-center.gap-sm {
     flex-direction: column;
     align-items: center;
   }
 
-  /* --- Hero badge/pill chips (booking page) --- */
+
   .flex.flex-wrap.justify-center.gap-sm {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  /* --- Footer --- */
+
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 1.5rem;
@@ -563,8 +560,7 @@ button {
     font-size: 0.8rem;
   }
 
-  /* --- Inline font-size overrides on headings --- */
-  /* These target the most common hard-coded sizes across pages */
+
   h1[style*="font-size: 4rem"],
   h1[style*="font-size:4rem"],
   h1[style*="font-size: 3.5rem"],
@@ -587,13 +583,13 @@ button {
     font-size: 1.25rem !important;
   }
 
-  /* --- Section with large headings --- */
+
   .section h2 {
     font-size: clamp(1.5rem, 6vw, 2rem);
     margin-bottom: 1.5rem;
   }
 
-  /* --- Forms --- */
+
   .booking-form,
   .checkout-form {
     padding: 1.25rem !important;
@@ -611,51 +607,51 @@ button {
     min-height: 44px;
   }
 
-  /* --- Booking page deposit row --- */
+
   div[style*="display: flex; align-items: center"] {
     flex-wrap: wrap;
   }
 
-  /* --- Map reduced height on mobile --- */
+
   div[style*="height: 450px"] {
     height: 260px !important;
   }
 
-  /* --- Products: hero featured image placeholder --- */
+
   div[style*="height: 400px"] {
     height: 220px !important;
   }
 
-  /* --- Salon / About: section with images + text side by side --- */
+
   .grid.grid-cols-1.md\\:grid-cols-2.items-center {
     gap: var(--spacing-sm);
   }
 
-  /* --- Salon featured treatment badge --- */
+
   span[style*="position: absolute"] {
     position: relative !important;
     display: inline-block;
     margin-bottom: 0.5rem;
   }
 
-  /* remove the "Most loved" fixed img height on mobile */
+
   img[style*="height: 300px"] {
     height: 200px !important;
     width: 100% !important;
     object-fit: cover;
   }
 
-  /* Service card images */
+
   img[style*="height: 200px"] {
     height: 160px !important;
   }
 
-  /* --- About page team card img --- */
+
   img[style*="height: 200px"][src*="team"] {
     height: 150px !important;
   }
 
-  /* --- Feel Amazing banner --- */
+
   section[style*="padding: 6rem 0; text-align: center"] {
     padding: 3rem 0 !important;
   }
@@ -664,7 +660,7 @@ button {
     font-size: 2rem !important;
   }
 
-  /* --- Treatment Menu tabs: make scrollable --- */
+
   .menu-tabs {
     gap: 6px !important;
     padding-bottom: 0.75rem;
@@ -676,7 +672,7 @@ button {
     font-size: 0.85rem !important;
   }
 
-  /* Treatment service rows: wrap on really narrow screens */
+
   .service {
     flex-wrap: wrap;
     gap: 0.25rem;
@@ -717,13 +713,13 @@ button {
     padding: 3rem 1rem !important;
   }
 
-  /* Checkout card columns: keep side by side */
+  
   .grid.grid-cols-2 {
     grid-template-columns: 1fr 1fr !important;
   }
 }
 
-/* Video Container Utilities */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -743,7 +739,7 @@ button {
   border: 0;
 }
 
-/* Tablet breakpoint extras (768px-1023px) */
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     padding: 0 1.5rem;
@@ -766,14 +762,14 @@ button {
   }
 }
 
-/* Section */
+
 
 .citizen-section {
   background: #f3f0f0;
   padding: 80px 20px;
 }
 
-/* Container */
+
 
 .citizen-container {
   max-width: 1200px;
@@ -783,7 +779,7 @@ button {
   gap: 80px;
 }
 
-/* Image */
+
 
 .citizen-image img {
   width: 100%;
@@ -792,14 +788,14 @@ button {
   display: block;
 }
 
-/* Content */
+
 
 .citizen-content {
   max-width: 500px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Color bars */
+
 
 .color-line {
   display: flex;
@@ -812,7 +808,7 @@ button {
 }
 
 .pink {
-  width: 100%;
+  width: 700px;
   background: #e43c7c;
 }
 
@@ -822,7 +818,7 @@ button {
   margin-left: 10px;
 }
 
-/* Text */
+
 
 .citizen-content p {
   font-size: 18px;
@@ -831,7 +827,7 @@ button {
   margin-bottom: 20px;
 }
 
-/* Button */
+
 
 .book-btn {
   display: inline-block;
@@ -843,9 +839,7 @@ button {
   font-weight: 600;
 }
 
-/* -------------------- */
-/* MOBILE RESPONSIVE */
-/* -------------------- */
+
 
 @media (max-width:768px) {
 
