@@ -7,15 +7,57 @@
   <title>Sorbet — Contact Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    .animated-border-card {
+      position: relative;
+    }
+
+    .animated-border-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-md);
+      padding: 4px;
+      /* thin line */
+      background: conic-gradient(from var(--angle),
+          transparent 0%,
+          transparent 80%,
+          var(--color-primary) 95%,
+          var(--color-primary) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      animation: spinLine 6s linear infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes spinLine {
+      from {
+        --angle: 0deg;
+      }
+
+      to {
+        --angle: 360deg;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
- 
+
   <div class="menu-backdrop" id="menuBackdrop"
     style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
 
-   
+
   <aside class="mobile-menu" id="menuPanel">
     <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <nav class="mobile-nav-links">
@@ -28,12 +70,12 @@
     </nav>
   </aside>
 
-   
+
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="logo">Sorbet</a>
 
-       
+
       <nav class="nav-links">
         <a href="about.html">About</a>
         <a href="salon.html">Salon</a>
@@ -42,7 +84,7 @@
         <a href="booking.html" class="btn btn-tertiary" style="padding: 0.5rem 1rem;">Book Online</a>
       </nav>
 
-       
+
       <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -50,7 +92,7 @@
   </header>
 
   <main>
-     
+
     <section class="hero"
       style="background: url('images/Sorbet-Contact-us-website-banner.webp') center/cover; padding: 5rem 0;">
       <div class="container hero-content">
@@ -59,11 +101,11 @@
       </div>
     </section>
 
-     
+
     <section class="section" style="background-color: var(--color-surface);">
       <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-md text-center">
-          <div class="card">
+          <div class="card animated-border-card">
             <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
               <i class="fas fa-phone-alt"></i>
             </div>
@@ -73,7 +115,7 @@
             <p style="color: var(--color-text-light);">Daily 9am – 8pm</p>
           </div>
 
-          <div class="card">
+          <div class="card animated-border-card">
             <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
               <i class="fas fa-map-marker-alt"></i>
             </div>
@@ -85,7 +127,7 @@
             <p style="color: var(--color-text-light);">Parking validated for 2 hours.</p>
           </div>
 
-          <div class="card">
+          <div class="card animated-border-card">
             <div class="card-icon-wrapper" style="margin: 0 auto 1rem; color: var(--color-primary); font-size: 2rem;">
               <i class="fab fa-instagram"></i>
             </div>
@@ -98,12 +140,12 @@
       </div>
     </section>
 
-     
+
     <section class="section">
       <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
 
-           
+
           <div class="card" style="text-align: left; align-items: stretch; border-top: 4px solid var(--color-primary);">
             <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Email Us</h2>
             <form action="https://formspree.io/f/xbdavblw" method="POST"
@@ -121,7 +163,7 @@
             </form>
           </div>
 
-           
+
           <div class="card" id="whatsappForm"
             style="text-align: left; align-items: stretch; border-top: 4px solid #25D366; background: #f0fff4;">
             <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: #128c7e;"><i class="fab fa-whatsapp"></i> WhatsApp
@@ -144,7 +186,7 @@
       </div>
     </section>
 
-    
+
     <section class="section">
       <div class="container">
         <h2 class="text-center mb-lg" style="font-size: 2.5rem;">Find Us Here</h2>
@@ -167,10 +209,10 @@
           <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
             treatments, promotions and tips to get that feeling.</p>
           <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/sorbetgroup"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/sorbetgroup"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://facebook.com/sorbetgroup"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/company/sorbetgroup"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="footer-col">

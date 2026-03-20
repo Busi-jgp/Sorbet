@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Old Menu Styles Merged */
+    
     .menu-tabs {
       display: flex;
       gap: 10px;
@@ -121,11 +121,11 @@
 
 <body>
 
-  <!-- Mobile Menu Backdrop -->
+  
   <div class="menu-backdrop" id="menuBackdrop"
     style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;"></div>
 
-  <!-- Mobile Menu -->
+ 
   <aside class="mobile-menu" id="menuPanel">
     <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
     <nav class="mobile-nav-links">
@@ -138,12 +138,12 @@
     </nav>
   </aside>
 
-  <!-- Header -->
+  
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="logo">Sorbet</a>
 
-      <!-- Desktop Nav -->
+      
       <nav class="nav-links">
         <a href="about.html">About</a>
         <a href="salon.html">Salon</a>
@@ -152,7 +152,7 @@
         <a href="booking.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Online</a>
       </nav>
 
-      <!-- Mobile Toggle -->
+      
       <button class="menu-toggle" id="menuIcon" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -169,7 +169,7 @@
       </div>
     </section>
 
-    <!-- Treatments Menu -->
+    
     <section class="section" style="background-color: var(--color-background);">
       <div class="container" style="max-width: 900px;">
 
@@ -183,7 +183,7 @@
 
         <div class="menu-container">
 
-          <!-- Nails -->
+           
           <div class="menu-section active" id="nails">
             <div class="menu-card pink">
               <div class="menu-header">
@@ -220,7 +220,7 @@
             </div>
           </div>
 
-          <!-- Brows -->
+           
           <div class="menu-section" id="brows">
             <div class="menu-card pink">
               <div class="menu-header">
@@ -247,7 +247,7 @@
             </div>
           </div>
 
-          <!-- Waxing -->
+          
           <div class="menu-section" id="waxing">
             <div class="menu-card pink">
               <div class="menu-header">
@@ -281,7 +281,7 @@
             </div>
           </div>
 
-          <!-- Skin -->
+           
           <div class="menu-section" id="skin">
             <div class="menu-card pink">
               <div class="menu-header">
@@ -316,7 +316,7 @@
             </div>
           </div>
 
-          <!-- Men -->
+          
           <div class="menu-section" id="men">
             <div class="menu-card black">
               <div class="menu-header">
@@ -356,7 +356,7 @@
             </div>
           </div>
 
-        </div> <!-- /menu-container -->
+        </div>  
 
       </div>
     </section>
@@ -372,10 +372,10 @@
           <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
             treatments, promotions and tips to get that feeling.</p>
           <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/sorbetgroup"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/sorbetgroup"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://facebook.com/sorbetgroup"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/company/sorbetgroup"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -407,12 +407,12 @@
   <script src="main.js"></script>
   <script>
     function openMenu(sectionId, btn) {
-      // hide all menu sections
+      
       document.querySelectorAll('.menu-section').forEach(el => el.classList.remove('active'));
-      // remove active from all tabs
+      
       document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
 
-      // show selected
+      
       document.getElementById(sectionId).classList.add('active');
       btn.classList.add('active');
     }

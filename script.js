@@ -53,7 +53,7 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
 
   let fullMessage =
     "Sent from Sorbet Website" +
-    "Hello, my name is " + name + "\n\n" +
+    "Hello, My name is " + name + "\n\n" +
     message + "\n\n" 
      ;
 

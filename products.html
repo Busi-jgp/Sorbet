@@ -485,7 +485,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
       justify-content: center;
-      /* Center the entire grid */
+      
       gap: 24px;
       max-width: 1180px;
       margin: 0 auto;
@@ -1508,10 +1508,10 @@
           <p style="color: rgba(255,255,255,0.7); margin: 1rem 0; font-size: 0.95rem;">Be the first to hear about new
             treatments, promotions and tips to get that feeling.</p>
           <div class="flex gap-sm" style="font-size: 1.5rem; margin-top: 1rem;">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/sorbetgroup"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/sorbetgroup"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://facebook.com/sorbetgroup"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/company/sorbetgroup"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -1559,6 +1559,57 @@
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Sanity API Fetch for uploaded pictures
+    document.addEventListener("DOMContentLoaded", () => {
+      const PROJECT_ID = 'g1mnn59c';
+      const DATASET = 'production';
+      const QUERY = encodeURIComponent('*[_type == "product"]{title, images[]{alt, category, "url": asset->url}}');
+      const API_URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
+
+      fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
+          const products = data.result;
+          if (!products || products.length === 0) return;
+
+          const gridContainer = document.querySelector('.pro-grid');
+          if (!gridContainer) return;
+
+          // Process horizontally so items show up at the top in order
+          products.reverse().forEach(product => {
+            if (product.images && product.images.length > 0) {
+              product.images.reverse().forEach(image => {
+                const card = document.createElement('div');
+                card.className = 'pro-card';
+                
+                const img = document.createElement('img');
+                img.src = image.url;
+                img.alt = image.alt || product.title;
+
+                const banner = document.createElement('div');
+                banner.className = 'pro-banner';
+                
+                const brand = document.createElement('div');
+                brand.className = 'pro-brand';
+                brand.textContent = image.category || 'Uploaded';
+                
+                const name = document.createElement('div');
+                name.className = 'pro-name';
+                name.textContent = product.title;
+
+                banner.appendChild(brand);
+                banner.appendChild(name);
+                card.appendChild(img);
+                card.appendChild(banner);
+                
+                gridContainer.insertBefore(card, gridContainer.firstChild);
+              });
+            }
+          });
+        })
+        .catch(err => console.error('Error fetching Sanity data:', err));
     });
   </script>
 

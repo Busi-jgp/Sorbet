@@ -23,3 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMenu);
   });
 });
+
+// Elevate Tab Switching Logic
+window.switchElevateTab = function(paneId, btnElem) {
+  // Hide all panes
+  document.querySelectorAll('.elevate-pane').forEach(pane => {
+    pane.classList.remove('active');
+  });
+  // Show target pane
+  const targetPane = document.getElementById('pane-' + paneId);
+  if (targetPane) targetPane.classList.add('active');
+
+  // Update buttons
+  document.querySelectorAll('.elevate-tab').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  if (btnElem) btnElem.classList.add('active');
+};
